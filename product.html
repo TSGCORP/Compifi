@@ -1,0 +1,756 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Product — Compifi</title>
+<meta name="description" content="Six modules that together answer every meaningful compensation question a mid-market HR leader has. Built on Salary.com data, interpreted by a senior consultant.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ==========================================================================
+   Compifi — Master stylesheet
+   Brand: Crimson #9F1239 + Near-black #0A0A0A + White
+   Typography: Inter (Medium 500, Bold 700)
+   Voice: Confident, analytical, refreshingly direct.
+   ========================================================================== */
+
+/* ------- Tokens ------- */
+:root {
+  /* Brand */
+  --crimson:        #9F1239;
+  --crimson-dark:   #7E1F2D;  /* used for hover & dark-bg lift */
+  --crimson-soft:   #FBEAEE;  /* subtle backgrounds */
+
+  /* Neutrals */
+  --ink:            #0A0A0A;
+  --ink-2:          #1F1F1F;
+  --ink-3:          #4A4A4A;
+  --ink-4:          #6B6B6B;
+  --ink-5:          #9CA3AF;
+  --rule:           #E2E8F0;  /* Mist — borders, dividers */
+  --rule-soft:      #F1F5F9;
+  --paper:          #FAFAF9;  /* page background */
+  --paper-2:        #F5F4F1;  /* section alt */
+  --white:          #FFFFFF;
+
+  /* Type */
+  --sans:  'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+  --mono:  'JetBrains Mono', ui-monospace, Consolas, 'Courier New', monospace;
+
+  /* Scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10:128px;
+
+  /* Layout */
+  --content-max: 1200px;
+  --content-narrow: 880px;
+  --radius-sm: 4px;
+  --radius:    6px;
+  --radius-lg: 10px;
+
+  /* Motion */
+  --ease: cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+/* ------- Reset ------- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body {
+  font-family: var(--sans);
+  font-weight: 500;
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.5;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: 'ss01', 'cv11';
+}
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; cursor: pointer; border: 0; background: none; }
+
+/* ------- Layout primitives ------- */
+.container {
+  width: 100%;
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+}
+.container-narrow {
+  width: 100%;
+  max-width: var(--content-narrow);
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+}
+.section { padding: var(--space-10) 0; }
+.section-sm { padding: var(--space-9) 0; }
+.section-alt { background: var(--paper-2); }
+.section-dark { background: var(--ink); color: var(--paper); }
+
+/* ------- Wordmark ------- */
+.wordmark {
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 22px;
+  letter-spacing: -0.025em;
+  line-height: 1;
+  color: var(--ink);
+  display: inline-flex;
+  align-items: baseline;
+}
+.wordmark .iq {
+  font-weight: 700;
+  color: var(--crimson);
+  letter-spacing: -0.03em;
+}
+.section-dark .wordmark { color: var(--white); }
+.section-dark .wordmark .iq { color: #C73558; } /* lifted crimson on dark */
+
+/* Larger wordmark for hero/footer */
+.wordmark-lg { font-size: 36px; }
+.wordmark-xl { font-size: 56px; }
+
+/* ------- Type ------- */
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--crimson);
+}
+.eyebrow-ink { color: var(--ink-4); }
+
+h1, h2, h3, h4 { font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; color: var(--ink); }
+h1 { font-size: clamp(40px, 6vw, 68px); letter-spacing: -0.035em; line-height: 1.02; }
+h2 { font-size: clamp(28px, 3.6vw, 44px); letter-spacing: -0.028em; line-height: 1.08; }
+h3 { font-size: clamp(20px, 2.2vw, 26px); letter-spacing: -0.018em; line-height: 1.2; }
+h4 { font-size: 17px; letter-spacing: -0.01em; line-height: 1.35; }
+
+.lede { font-size: clamp(17px, 1.6vw, 20px); line-height: 1.55; color: var(--ink-3); font-weight: 500; }
+.body-lg { font-size: 17px; line-height: 1.6; color: var(--ink-3); }
+.body { font-size: 16px; line-height: 1.6; color: var(--ink-3); }
+.body-sm { font-size: 14px; line-height: 1.55; color: var(--ink-4); }
+.caption { font-size: 12px; line-height: 1.4; color: var(--ink-4); }
+
+.section-dark h1, .section-dark h2, .section-dark h3, .section-dark h4 { color: var(--white); }
+.section-dark .lede, .section-dark .body-lg, .section-dark .body { color: rgba(255,255,255,0.72); }
+
+/* Pull-quote / editorial */
+.pull {
+  font-size: clamp(22px, 2.6vw, 32px);
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+.pull .accent { color: var(--crimson); }
+
+/* ------- Navigation ------- */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(250, 250, 249, 0.85);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid var(--rule);
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px var(--space-6);
+  max-width: var(--content-max);
+  margin: 0 auto;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-7);
+  list-style: none;
+}
+.nav-links a {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink-2);
+  position: relative;
+  padding: 4px 0;
+  transition: color 0.18s var(--ease);
+}
+.nav-links a:hover { color: var(--crimson); }
+.nav-links a.active { color: var(--ink); }
+.nav-links a.active::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: -2px;
+  height: 1.5px;
+  background: var(--crimson);
+}
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  background: var(--crimson);
+  color: var(--white);
+  border-radius: var(--radius);
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.18s var(--ease);
+}
+.nav-cta:hover { background: var(--crimson-dark); }
+.nav-cta .arrow { transition: transform 0.18s var(--ease); }
+.nav-cta:hover .arrow { transform: translateX(2px); }
+
+/* Mobile nav toggle */
+.nav-toggle { display: none; }
+
+/* ------- Buttons ------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 24px;
+  border-radius: var(--radius);
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.18s var(--ease);
+  white-space: nowrap;
+}
+.btn-primary {
+  background: var(--crimson);
+  color: var(--white);
+}
+.btn-primary:hover { background: var(--crimson-dark); transform: translateY(-1px); }
+.btn-dark {
+  background: var(--ink);
+  color: var(--white);
+}
+.btn-dark:hover { background: var(--ink-2); transform: translateY(-1px); }
+.btn-outline {
+  background: transparent;
+  color: var(--ink);
+  box-shadow: inset 0 0 0 1px var(--ink);
+}
+.btn-outline:hover { background: var(--ink); color: var(--white); }
+.btn-ghost {
+  color: var(--ink);
+  padding: 14px 0;
+}
+.btn-ghost:hover { color: var(--crimson); }
+.btn-lg { padding: 18px 32px; font-size: 16px; }
+
+.btn .arrow { display: inline-block; transition: transform 0.18s var(--ease); }
+.btn:hover .arrow { transform: translateX(3px); }
+
+/* ------- Cards ------- */
+.card {
+  background: var(--white);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  transition: all 0.2s var(--ease);
+}
+.card-bordered {
+  background: transparent;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+}
+.card-hover:hover {
+  border-color: var(--ink-5);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px -8px rgba(0,0,0,0.08);
+}
+
+/* ------- Grid helpers ------- */
+.grid { display: grid; gap: var(--space-5); }
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+/* ------- Rule / divider ------- */
+.rule { height: 1px; background: var(--rule); border: 0; }
+.rule-crimson { height: 2px; background: var(--crimson); border: 0; width: 40px; }
+.rule-vertical { width: 1px; background: var(--rule); align-self: stretch; }
+
+/* ------- Footer ------- */
+.footer {
+  background: var(--ink);
+  color: var(--paper);
+  padding: var(--space-9) 0 var(--space-6);
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: var(--space-7);
+  padding-bottom: var(--space-8);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.footer h5 {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: var(--space-4);
+  font-family: var(--mono);
+}
+.footer ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.footer a {
+  font-size: 14px;
+  color: rgba(255,255,255,0.75);
+  transition: color 0.18s var(--ease);
+}
+.footer a:hover { color: #C73558; }
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: var(--space-5);
+  font-size: 12px;
+  color: rgba(255,255,255,0.4);
+}
+.footer-tagline {
+  font-size: 14px;
+  color: rgba(255,255,255,0.6);
+  max-width: 340px;
+  margin-top: var(--space-3);
+  line-height: 1.6;
+}
+
+/* ------- Utility ------- */
+.text-crimson { color: var(--crimson); }
+.text-ink { color: var(--ink); }
+.text-muted { color: var(--ink-4); }
+.mt-1 { margin-top: var(--space-1); }
+.mt-2 { margin-top: var(--space-2); }
+.mt-3 { margin-top: var(--space-3); }
+.mt-4 { margin-top: var(--space-4); }
+.mt-5 { margin-top: var(--space-5); }
+.mt-6 { margin-top: var(--space-6); }
+.mt-7 { margin-top: var(--space-7); }
+.mb-1 { margin-bottom: var(--space-1); }
+.mb-2 { margin-bottom: var(--space-2); }
+.mb-3 { margin-bottom: var(--space-3); }
+.mb-4 { margin-bottom: var(--space-4); }
+.mb-5 { margin-bottom: var(--space-5); }
+.mb-6 { margin-bottom: var(--space-6); }
+.mb-7 { margin-bottom: var(--space-7); }
+
+/* ------- Page-load reveal animation (subtle, single orchestration) ------- */
+@keyframes rise {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.reveal { animation: rise 0.7s var(--ease) both; }
+.reveal-1 { animation-delay: 0.05s; }
+.reveal-2 { animation-delay: 0.15s; }
+.reveal-3 { animation-delay: 0.25s; }
+.reveal-4 { animation-delay: 0.35s; }
+.reveal-5 { animation-delay: 0.45s; }
+
+/* ------- Responsive ------- */
+@media (max-width: 900px) {
+  .grid-3, .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: var(--space-6); }
+}
+@media (max-width: 640px) {
+  .nav-login { display: none; }
+    .container, .container-narrow { padding: 0 var(--space-5); }
+  .section { padding: var(--space-9) 0; }
+  .section-sm { padding: var(--space-8) 0; }
+  .nav-links { display: none; }
+  .nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px; height: 40px;
+    border-radius: var(--radius);
+    background: var(--rule-soft);
+  }
+  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; gap: var(--space-3); align-items: flex-start; }
+  h1 { font-size: 40px; }
+}
+
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.nav-login {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 16px;
+  background: transparent;
+  color: var(--crimson);
+  border-radius: var(--radius);
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.18s var(--ease);
+  box-shadow: inset 0 0 0 1px var(--crimson);
+}
+.nav-login:hover {
+  background: var(--crimson);
+  color: var(--white);
+}
+.nav-login svg { transition: transform 0.18s var(--ease); }
+.nav-login:hover svg { transform: translateX(1px); }
+</style>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2032%2032%22%3E%0A%20%20%3Crect%20width%3D%2232%22%20height%3D%2232%22%20fill%3D%22%239F1239%22%20rx%3D%224%22/%3E%0A%20%20%3Ctext%20x%3D%2216%22%20y%3D%2223%22%20font-family%3D%22Inter%2C%20Arial%2C%20sans-serif%22%20font-size%3D%2222%22%20font-weight%3D%22700%22%20fill%3D%22%23FFFFFF%22%20text-anchor%3D%22middle%22%20letter-spacing%3D%22-1%22%3EC%3C/text%3E%0A%3C/svg%3E%0A">
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="wordmark">Comp<span class="iq">ifi</span></a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="product.html" class="active">Product</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions">
+      <a href="compifi-dashboard.html" class="nav-login" aria-label="Client login">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path><polyline points="10 17 15 12 10 7"></polyline><line x1="15" y1="12" x2="3" y2="12"></line></svg>
+        Client Login
+      </a>
+      <a href="contact.html" class="nav-cta">Book a walkthrough <span class="arrow">→</span></a>
+    </div>
+    <button class="nav-toggle" aria-label="Menu">
+      <svg width="18" height="14" viewBox="0 0 18 14" fill="none"><path d="M1 1h16M1 7h16M1 13h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="section">
+  <div class="container">
+    <div style="max-width: 880px;">
+      <div class="eyebrow">The product</div>
+      <h1 style="margin-top: var(--space-5);">
+        Six modules.<br>
+        Every compensation question, <span style="color: var(--crimson);">answered.</span>
+      </h1>
+      <p class="lede" style="margin-top: var(--space-6); max-width: 720px;">
+        We didn't build Compifi to display data. We built it to answer the questions HR leaders actually get asked — by their CEO, their CFO, and their best people. Each module exists for a specific question. Nothing is decorative.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- MODULE 01 -->
+<section class="section-sm" style="border-top: 1px solid var(--rule);">
+  <div class="container">
+    <div style="display: grid; grid-template-columns: 0.4fr 1.2fr 1.4fr; gap: var(--space-7); align-items: start;">
+      <div style="font-family: var(--mono); font-size: 64px; font-weight: 500; color: var(--crimson); letter-spacing: -0.04em; line-height: 1;">01</div>
+      <div>
+        <div class="eyebrow eyebrow-ink">Pay positioning</div>
+        <h2 style="margin-top: var(--space-3); font-size: 32px;">Are we paying competitively?</h2>
+        <p class="body" style="margin-top: var(--space-4);">
+          The question every CEO asks before approving a merit cycle. The histogram view shows your full population compared against the market median, banded by compa-ratio. Below 0.85 means you're losing people. Above 1.15 means you're overpaying for what you have. Both are problems Compifi surfaces immediately.
+        </p>
+        <ul style="margin-top: var(--space-5); display: flex; flex-direction: column; gap: 10px; list-style: none;">
+          <li style="display: flex; gap: 10px; font-size: 14px; color: var(--ink-3);"><span style="color: var(--crimson); font-weight: 700;">→</span> Compa-ratio distribution across the full org</li>
+          <li style="display: flex; gap: 10px; font-size: 14px; color: var(--ink-3);"><span style="color: var(--crimson); font-weight: 700;">→</span> Pay positioning by division, level, function, geography</li>
+          <li style="display: flex; gap: 10px; font-size: 14px; color: var(--ink-3);"><span style="color: var(--crimson); font-weight: 700;">→</span> Quarter-over-quarter movement, with explanations</li>
+        </ul>
+      </div>
+      <div class="card" style="padding: var(--space-6); background: var(--paper-2);">
+        <div class="eyebrow eyebrow-ink" style="color: var(--ink-4);">Sample insight</div>
+        <p class="pull" style="margin-top: var(--space-4); font-size: 22px;">
+          "Engineering is paying at the <span class="accent">23rd percentile</span> of market. Three senior roles are now at significant flight risk."
+        </p>
+        <div style="margin-top: var(--space-5); padding-top: var(--space-4); border-top: 1px solid var(--rule); font-size: 12px; color: var(--ink-4); font-family: var(--mono);">— Q1 quarterly review, sample client</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MODULE 02 -->
+<section class="section-sm section-alt">
+  <div class="container">
+    <div style="display: grid; grid-template-columns: 0.4fr 1.2fr 1.4fr; gap: var(--space-7); align-items: start;">
+      <div style="font-family: var(--mono); font-size: 64px; font-weight: 500; color: var(--crimson); letter-spacing: -0.04em; line-height: 1;">02</div>
+      <div>
+        <div class="eyebrow eyebrow-ink">Role explorer</div>
+        <h2 style="margin-top: var(--space-3); font-size: 32px;">What should we pay <em style="font-style: italic; color: var(--crimson);">this</em> person?</h2>
+        <p class="body" style="margin-top: var(--space-4);">
+          The workhorse of Compifi. Search any employee, role, or level. See the market range, your internal peers, the recommended action — and click through to the full employee profile with tenure, last raise, performance flag, and retention modeling.
+        </p>
+        <ul style="margin-top: var(--space-5); display: flex; flex-direction: column; gap: 10px; list-style: none;">
+          <li style="display: flex; gap: 10px; font-size: 14px; color: var(--ink-3);"><span style="color: var(--crimson); font-weight: 700;">→</span> Live filter by division, level, country, compa band</li>
+          <li style="display: flex; gap: 10px; font-size: 14px; color: var(--ink-3);"><span style="color: var(--crimson); font-weight: 700;">→</span> Employee detail drawer with full comp history</li>
+          <li style="display: flex; gap: 10px; font-size: 14px; color: var(--ink-3);"><span style="color: var(--crimson); font-weight: 700;">→</span> Recommended action ranked by business impact</li>
+        </ul>
+      </div>
+      <div class="card" style="padding: var(--space-6);">
+        <div class="eyebrow eyebrow-ink" style="color: var(--ink-4);">Use it for</div>
+        <ul style="margin-top: var(--space-4); list-style: none; display: flex; flex-direction: column; gap: var(--space-3);">
+          <li style="padding-bottom: var(--space-3); border-bottom: 1px solid var(--rule);"><strong style="color: var(--ink);">Counter-offer prep.</strong> <span class="body-sm">Before the resignation lands.</span></li>
+          <li style="padding-bottom: var(--space-3); border-bottom: 1px solid var(--rule);"><strong style="color: var(--ink);">New hire offers.</strong> <span class="body-sm">Anchored in market, not anchored in the last person you hired.</span></li>
+          <li style="padding-bottom: var(--space-3); border-bottom: 1px solid var(--rule);"><strong style="color: var(--ink);">Promotion decisions.</strong> <span class="body-sm">What does this role pay at the next level?</span></li>
+          <li><strong style="color: var(--ink);">CEO ad-hoc questions.</strong> <span class="body-sm">"What does Sarah make and is it right?"</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MODULE 03 -->
+<section class="section-sm" style="border-top: 1px solid var(--rule);">
+  <div class="container">
+    <div style="display: grid; grid-template-columns: 0.4fr 1.2fr 1.4fr; gap: var(--space-7); align-items: start;">
+      <div style="font-family: var(--mono); font-size: 64px; font-weight: 500; color: var(--crimson); letter-spacing: -0.04em; line-height: 1;">03</div>
+      <div>
+        <div class="eyebrow eyebrow-ink">Geographic intelligence</div>
+        <h2 style="margin-top: var(--space-3); font-size: 32px;">Are we paying the Toronto team correctly?</h2>
+        <p class="body" style="margin-top: var(--space-4);">
+          A world map with country bubbles sized by headcount and colored by compensation health. Multi-state pay transparency for the US. Localized cost-of-labor data from Salary.com — not crude cost-of-living adjustments that don't reflect what the market actually pays.
+        </p>
+        <ul style="margin-top: var(--space-5); display: flex; flex-direction: column; gap: 10px; list-style: none;">
+          <li style="display: flex; gap: 10px; font-size: 14px; color: var(--ink-3);"><span style="color: var(--crimson); font-weight: 700;">→</span> Country-level and state-level localization</li>
+          <li style="display: flex; gap: 10px; font-size: 14px; color: var(--ink-3);"><span style="color: var(--crimson); font-weight: 700;">→</span> Pay equity surfaced by region</li>
+          <li style="display: flex; gap: 10px; font-size: 14px; color: var(--ink-3);"><span style="color: var(--crimson); font-weight: 700;">→</span> Remote vs in-office market deltas</li>
+        </ul>
+      </div>
+      <div class="card" style="padding: var(--space-6); background: var(--paper-2);">
+        <div class="eyebrow eyebrow-ink" style="color: var(--ink-4);">The hard question</div>
+        <p class="pull" style="margin-top: var(--space-4); font-size: 22px;">
+          When pay transparency laws hit your state, will you be <span class="accent">defensible</span>?
+        </p>
+        <p class="body-sm" style="margin-top: var(--space-4);">
+          Twelve US states now require salary ranges in job postings. Compifi builds those ranges for you — and shows whether your internal pay supports them.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MODULE 04 -->
+<section class="section-sm section-alt">
+  <div class="container">
+    <div style="display: grid; grid-template-columns: 0.4fr 1.2fr 1.4fr; gap: var(--space-7); align-items: start;">
+      <div style="font-family: var(--mono); font-size: 64px; font-weight: 500; color: var(--crimson); letter-spacing: -0.04em; line-height: 1;">04</div>
+      <div>
+        <div class="eyebrow eyebrow-ink">Pay equity</div>
+        <h2 style="margin-top: var(--space-3); font-size: 32px;">Where are our gaps — before they become lawsuits?</h2>
+        <p class="body" style="margin-top: var(--space-4);">
+          Pay equity ranked ascending by division and region, so the gaps surface first. A tenure heatmap reveals where new hires are out-earning loyal employees. Issues are flagged in plain language with specific recommended fixes.
+        </p>
+        <ul style="margin-top: var(--space-5); display: flex; flex-direction: column; gap: 10px; list-style: none;">
+          <li style="display: flex; gap: 10px; font-size: 14px; color: var(--ink-3);"><span style="color: var(--crimson); font-weight: 700;">→</span> Division-level and region-level equity scoring</li>
+          <li style="display: flex; gap: 10px; font-size: 14px; color: var(--ink-3);"><span style="color: var(--crimson); font-weight: 700;">→</span> Tenure-vs-pay heatmap</li>
+          <li style="display: flex; gap: 10px; font-size: 14px; color: var(--ink-3);"><span style="color: var(--crimson); font-weight: 700;">→</span> Suggested adjustments with cost estimates</li>
+        </ul>
+      </div>
+      <div class="card" style="padding: var(--space-6);">
+        <div class="eyebrow eyebrow-ink" style="color: var(--ink-4);">Don't get caught flat-footed</div>
+        <p class="body" style="margin-top: var(--space-4);">
+          Most equity issues don't show up in the quarterly P&L. They show up the day a high performer asks why the person hired six months ago — into the same role — is making twenty thousand dollars more.
+        </p>
+        <p class="body" style="margin-top: var(--space-4);">
+          Compifi surfaces those before the conversation does.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MODULE 05 -->
+<section class="section-sm" style="border-top: 1px solid var(--rule);">
+  <div class="container">
+    <div style="display: grid; grid-template-columns: 0.4fr 1.2fr 1.4fr; gap: var(--space-7); align-items: start;">
+      <div style="font-family: var(--mono); font-size: 64px; font-weight: 500; color: var(--crimson); letter-spacing: -0.04em; line-height: 1;">05</div>
+      <div>
+        <div class="eyebrow eyebrow-ink">Flight risk</div>
+        <h2 style="margin-top: var(--space-3); font-size: 32px;">Who's the next resignation — and what does it cost to keep them?</h2>
+        <p class="body" style="margin-top: var(--space-4);">
+          A composite retention score combines pay position, tenure curve, peer comp velocity, and performance signal. The top 30 retention targets surface with cost-to-retain modeling per person — including what it would cost to do nothing.
+        </p>
+        <ul style="margin-top: var(--space-5); display: flex; flex-direction: column; gap: 10px; list-style: none;">
+          <li style="display: flex; gap: 10px; font-size: 14px; color: var(--ink-3);"><span style="color: var(--crimson); font-weight: 700;">→</span> Composite retention risk score, 0–100</li>
+          <li style="display: flex; gap: 10px; font-size: 14px; color: var(--ink-3);"><span style="color: var(--crimson); font-weight: 700;">→</span> Cost-to-retain modeled per employee</li>
+          <li style="display: flex; gap: 10px; font-size: 14px; color: var(--ink-3);"><span style="color: var(--crimson); font-weight: 700;">→</span> Replacement cost benchmark by role</li>
+        </ul>
+      </div>
+      <div class="card" style="padding: var(--space-6); background: var(--paper-2);">
+        <div class="eyebrow eyebrow-ink" style="color: var(--ink-4);">The math</div>
+        <p class="pull" style="margin-top: var(--space-4); font-size: 22px;">
+          Most replacements cost <span class="accent">12×</span> the retention adjustment that would have prevented them.
+        </p>
+        <p class="body-sm" style="margin-top: var(--space-4);">
+          Retention is rarely a budget conversation. It's an accounting conversation — and Compifi does that math for you.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MODULE 06 -->
+<section class="section-sm section-alt">
+  <div class="container">
+    <div style="display: grid; grid-template-columns: 0.4fr 1.2fr 1.4fr; gap: var(--space-7); align-items: start;">
+      <div style="font-family: var(--mono); font-size: 64px; font-weight: 500; color: var(--crimson); letter-spacing: -0.04em; line-height: 1;">06</div>
+      <div>
+        <div class="eyebrow eyebrow-ink">Quarterly insights</div>
+        <h2 style="margin-top: var(--space-3); font-size: 32px;">What does all of this <em style="font-style: italic; color: var(--crimson);">mean</em>?</h2>
+        <p class="body" style="margin-top: var(--space-4);">
+          Software doesn't render judgment. We do. Every quarter, your Compifi consultant writes a short editorial-style read on your data — what changed, what to do about it, what to bring to your CEO. Signed by name. Not generated.
+        </p>
+        <ul style="margin-top: var(--space-5); display: flex; flex-direction: column; gap: 10px; list-style: none;">
+          <li style="display: flex; gap: 10px; font-size: 14px; color: var(--ink-3);"><span style="color: var(--crimson); font-weight: 700;">→</span> Quarterly written review by your named consultant</li>
+          <li style="display: flex; gap: 10px; font-size: 14px; color: var(--ink-3);"><span style="color: var(--crimson); font-weight: 700;">→</span> Three to five prioritized actions per quarter</li>
+          <li style="display: flex; gap: 10px; font-size: 14px; color: var(--ink-3);"><span style="color: var(--crimson); font-weight: 700;">→</span> Ad-hoc questions answered in-platform</li>
+        </ul>
+      </div>
+      <div class="card" style="padding: var(--space-6);">
+        <div class="eyebrow eyebrow-ink" style="color: var(--ink-4);">This is the moat</div>
+        <p class="body" style="margin-top: var(--space-4);">
+          Most comp software can't write you a quarterly read. The big consulting firms can — for a quarter of a million dollars. Compifi does it because the senior advisory team sits on the other side of the dashboard.
+        </p>
+        <p class="body" style="margin-top: var(--space-4); color: var(--ink);">
+          <strong>That's the entire reason Compifi exists.</strong>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DATA SOURCE -->
+<section class="section section-dark">
+  <div class="container">
+    <div style="display: grid; grid-template-columns: 1fr 1.6fr; gap: var(--space-8); align-items: center;">
+      <div>
+        <div class="eyebrow" style="color: #C73558;">The data underneath</div>
+        <h2 style="color: var(--white); margin-top: var(--space-4);">
+          Enterprise data.<br>Not crowd-sourced guesses.
+        </h2>
+      </div>
+      <div>
+        <p style="font-size: 18px; line-height: 1.6; color: rgba(255,255,255,0.78);">
+          Compifi is built on Salary.com's enterprise market data — the same dataset that powers compensation decisions at thousands of Fortune 500 companies. Not crowd-sourced. Not survey-of-surveys. Real, validated market intelligence covering 15 million data points and 8,000+ job titles.
+        </p>
+        <div style="margin-top: var(--space-6); display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-5);">
+          <div>
+            <div style="font-size: 32px; font-weight: 700; color: var(--white); letter-spacing: -0.03em;">15M+</div>
+            <div style="font-size: 13px; color: rgba(255,255,255,0.55); margin-top: 4px;">Validated salary records</div>
+          </div>
+          <div>
+            <div style="font-size: 32px; font-weight: 700; color: var(--white); letter-spacing: -0.03em;">8,000+</div>
+            <div style="font-size: 13px; color: rgba(255,255,255,0.55); margin-top: 4px;">Job titles covered</div>
+          </div>
+          <div>
+            <div style="font-size: 32px; font-weight: 700; color: var(--white); letter-spacing: -0.03em;">100+</div>
+            <div style="font-size: 13px; color: rgba(255,255,255,0.55); margin-top: 4px;">Countries & regions</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section">
+  <div class="container-narrow" style="text-align: center;">
+    <div class="eyebrow">See it on your data</div>
+    <h2 style="margin-top: var(--space-4);">A 30-minute walkthrough on <span style="color: var(--crimson);">your</span> org.</h2>
+    <p class="lede" style="margin-top: var(--space-5); max-width: 540px; margin-left: auto; margin-right: auto;">
+      The fastest way to see what Compifi can do is to see it on your actual data. We'll do a walkthrough live, against your real org structure.
+    </p>
+    <div style="margin-top: var(--space-6);">
+      <a href="contact.html" class="btn btn-primary btn-lg">Book a walkthrough <span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="wordmark wordmark-lg" style="color: var(--white);">Comp<span class="iq" style="color: #C73558;">ifi</span></a>
+        <p class="footer-tagline">
+          Compensation intelligence for the middle. Senior advisory delivered through our consulting partner.
+        </p>
+      </div>
+      <div>
+        <h5>Product</h5>
+        <ul>
+          <li><a href="product.html">Modules</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="contact.html">Book a walkthrough</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Get in touch</h5>
+        <ul>
+          <li><a href="mailto:hello@compifi.ai">hello@compifi.ai</a></li>
+          <li><a href="contact.html">Schedule a call</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 Compifi, Inc.</div>
+      <div>Partnered with Salary.com</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* Compifi — minimal interactions */
+(function () {
+  // Mobile nav toggle (placeholder — full drawer can come later)
+  const toggle = document.querySelector('.nav-toggle');
+  const links = document.querySelector('.nav-links');
+  if (toggle && links) {
+    toggle.addEventListener('click', () => {
+      const isOpen = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', isOpen);
+      links.style.display = isOpen ? 'flex' : '';
+      if (isOpen) {
+        links.style.position = 'absolute';
+        links.style.top = '64px';
+        links.style.left = '0';
+        links.style.right = '0';
+        links.style.flexDirection = 'column';
+        links.style.background = 'var(--paper)';
+        links.style.padding = 'var(--space-5) var(--space-6)';
+        links.style.borderBottom = '1px solid var(--rule)';
+        links.style.gap = 'var(--space-4)';
+      }
+    });
+  }
+})();
+
+</script>
+</body>
+</html>

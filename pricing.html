@@ -1,0 +1,1000 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pricing — Compifi</title>
+<meta name="description" content="Three tiers, public numbers. Core at $999/month. Intelligence at $1,899/month. Enterprise at $2,799/month. Save with annual billing — onboarding included.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ==========================================================================
+   Compifi — Master stylesheet
+   Brand: Crimson #9F1239 + Near-black #0A0A0A + White
+   Typography: Inter (Medium 500, Bold 700)
+   Voice: Confident, analytical, refreshingly direct.
+   ========================================================================== */
+
+/* ------- Tokens ------- */
+:root {
+  /* Brand */
+  --crimson:        #9F1239;
+  --crimson-dark:   #7E1F2D;  /* used for hover & dark-bg lift */
+  --crimson-soft:   #FBEAEE;  /* subtle backgrounds */
+
+  /* Neutrals */
+  --ink:            #0A0A0A;
+  --ink-2:          #1F1F1F;
+  --ink-3:          #4A4A4A;
+  --ink-4:          #6B6B6B;
+  --ink-5:          #9CA3AF;
+  --rule:           #E2E8F0;  /* Mist — borders, dividers */
+  --rule-soft:      #F1F5F9;
+  --paper:          #FAFAF9;  /* page background */
+  --paper-2:        #F5F4F1;  /* section alt */
+  --white:          #FFFFFF;
+
+  /* Type */
+  --sans:  'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+  --mono:  'JetBrains Mono', ui-monospace, Consolas, 'Courier New', monospace;
+
+  /* Scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10:128px;
+
+  /* Layout */
+  --content-max: 1200px;
+  --content-narrow: 880px;
+  --radius-sm: 4px;
+  --radius:    6px;
+  --radius-lg: 10px;
+
+  /* Motion */
+  --ease: cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+/* ------- Reset ------- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body {
+  font-family: var(--sans);
+  font-weight: 500;
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.5;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: 'ss01', 'cv11';
+}
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; cursor: pointer; border: 0; background: none; }
+
+/* ------- Layout primitives ------- */
+.container {
+  width: 100%;
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+}
+.container-narrow {
+  width: 100%;
+  max-width: var(--content-narrow);
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+}
+.section { padding: var(--space-10) 0; }
+.section-sm { padding: var(--space-9) 0; }
+.section-alt { background: var(--paper-2); }
+.section-dark { background: var(--ink); color: var(--paper); }
+
+/* ------- Wordmark ------- */
+.wordmark {
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 22px;
+  letter-spacing: -0.025em;
+  line-height: 1;
+  color: var(--ink);
+  display: inline-flex;
+  align-items: baseline;
+}
+.wordmark .iq {
+  font-weight: 700;
+  color: var(--crimson);
+  letter-spacing: -0.03em;
+}
+.section-dark .wordmark { color: var(--white); }
+.section-dark .wordmark .iq { color: #C73558; } /* lifted crimson on dark */
+
+/* Larger wordmark for hero/footer */
+.wordmark-lg { font-size: 36px; }
+.wordmark-xl { font-size: 56px; }
+
+/* ------- Type ------- */
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--crimson);
+}
+.eyebrow-ink { color: var(--ink-4); }
+
+h1, h2, h3, h4 { font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; color: var(--ink); }
+h1 { font-size: clamp(40px, 6vw, 68px); letter-spacing: -0.035em; line-height: 1.02; }
+h2 { font-size: clamp(28px, 3.6vw, 44px); letter-spacing: -0.028em; line-height: 1.08; }
+h3 { font-size: clamp(20px, 2.2vw, 26px); letter-spacing: -0.018em; line-height: 1.2; }
+h4 { font-size: 17px; letter-spacing: -0.01em; line-height: 1.35; }
+
+.lede { font-size: clamp(17px, 1.6vw, 20px); line-height: 1.55; color: var(--ink-3); font-weight: 500; }
+.body-lg { font-size: 17px; line-height: 1.6; color: var(--ink-3); }
+.body { font-size: 16px; line-height: 1.6; color: var(--ink-3); }
+.body-sm { font-size: 14px; line-height: 1.55; color: var(--ink-4); }
+.caption { font-size: 12px; line-height: 1.4; color: var(--ink-4); }
+
+.section-dark h1, .section-dark h2, .section-dark h3, .section-dark h4 { color: var(--white); }
+.section-dark .lede, .section-dark .body-lg, .section-dark .body { color: rgba(255,255,255,0.72); }
+
+/* Pull-quote / editorial */
+.pull {
+  font-size: clamp(22px, 2.6vw, 32px);
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+.pull .accent { color: var(--crimson); }
+
+/* ------- Navigation ------- */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(250, 250, 249, 0.85);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid var(--rule);
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px var(--space-6);
+  max-width: var(--content-max);
+  margin: 0 auto;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-7);
+  list-style: none;
+}
+.nav-links a {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink-2);
+  position: relative;
+  padding: 4px 0;
+  transition: color 0.18s var(--ease);
+}
+.nav-links a:hover { color: var(--crimson); }
+.nav-links a.active { color: var(--ink); }
+.nav-links a.active::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: -2px;
+  height: 1.5px;
+  background: var(--crimson);
+}
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  background: var(--crimson);
+  color: var(--white);
+  border-radius: var(--radius);
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.18s var(--ease);
+}
+.nav-cta:hover { background: var(--crimson-dark); }
+.nav-cta .arrow { transition: transform 0.18s var(--ease); }
+.nav-cta:hover .arrow { transform: translateX(2px); }
+
+/* Mobile nav toggle */
+.nav-toggle { display: none; }
+
+/* ------- Buttons ------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 24px;
+  border-radius: var(--radius);
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.18s var(--ease);
+  white-space: nowrap;
+}
+.btn-primary {
+  background: var(--crimson);
+  color: var(--white);
+}
+.btn-primary:hover { background: var(--crimson-dark); transform: translateY(-1px); }
+.btn-dark {
+  background: var(--ink);
+  color: var(--white);
+}
+.btn-dark:hover { background: var(--ink-2); transform: translateY(-1px); }
+.btn-outline {
+  background: transparent;
+  color: var(--ink);
+  box-shadow: inset 0 0 0 1px var(--ink);
+}
+.btn-outline:hover { background: var(--ink); color: var(--white); }
+.btn-ghost {
+  color: var(--ink);
+  padding: 14px 0;
+}
+.btn-ghost:hover { color: var(--crimson); }
+.btn-lg { padding: 18px 32px; font-size: 16px; }
+
+.btn .arrow { display: inline-block; transition: transform 0.18s var(--ease); }
+.btn:hover .arrow { transform: translateX(3px); }
+
+/* ------- Cards ------- */
+.card {
+  background: var(--white);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  transition: all 0.2s var(--ease);
+}
+.card-bordered {
+  background: transparent;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+}
+.card-hover:hover {
+  border-color: var(--ink-5);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px -8px rgba(0,0,0,0.08);
+}
+
+/* ------- Grid helpers ------- */
+.grid { display: grid; gap: var(--space-5); }
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+/* ------- Rule / divider ------- */
+.rule { height: 1px; background: var(--rule); border: 0; }
+.rule-crimson { height: 2px; background: var(--crimson); border: 0; width: 40px; }
+.rule-vertical { width: 1px; background: var(--rule); align-self: stretch; }
+
+/* ------- Footer ------- */
+.footer {
+  background: var(--ink);
+  color: var(--paper);
+  padding: var(--space-9) 0 var(--space-6);
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: var(--space-7);
+  padding-bottom: var(--space-8);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.footer h5 {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: var(--space-4);
+  font-family: var(--mono);
+}
+.footer ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.footer a {
+  font-size: 14px;
+  color: rgba(255,255,255,0.75);
+  transition: color 0.18s var(--ease);
+}
+.footer a:hover { color: #C73558; }
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: var(--space-5);
+  font-size: 12px;
+  color: rgba(255,255,255,0.4);
+}
+.footer-tagline {
+  font-size: 14px;
+  color: rgba(255,255,255,0.6);
+  max-width: 340px;
+  margin-top: var(--space-3);
+  line-height: 1.6;
+}
+
+/* ------- Utility ------- */
+.text-crimson { color: var(--crimson); }
+.text-ink { color: var(--ink); }
+.text-muted { color: var(--ink-4); }
+.mt-1 { margin-top: var(--space-1); }
+.mt-2 { margin-top: var(--space-2); }
+.mt-3 { margin-top: var(--space-3); }
+.mt-4 { margin-top: var(--space-4); }
+.mt-5 { margin-top: var(--space-5); }
+.mt-6 { margin-top: var(--space-6); }
+.mt-7 { margin-top: var(--space-7); }
+.mb-1 { margin-bottom: var(--space-1); }
+.mb-2 { margin-bottom: var(--space-2); }
+.mb-3 { margin-bottom: var(--space-3); }
+.mb-4 { margin-bottom: var(--space-4); }
+.mb-5 { margin-bottom: var(--space-5); }
+.mb-6 { margin-bottom: var(--space-6); }
+.mb-7 { margin-bottom: var(--space-7); }
+
+/* ------- Page-load reveal animation (subtle, single orchestration) ------- */
+@keyframes rise {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.reveal { animation: rise 0.7s var(--ease) both; }
+.reveal-1 { animation-delay: 0.05s; }
+.reveal-2 { animation-delay: 0.15s; }
+.reveal-3 { animation-delay: 0.25s; }
+.reveal-4 { animation-delay: 0.35s; }
+.reveal-5 { animation-delay: 0.45s; }
+
+/* ------- Responsive ------- */
+@media (max-width: 900px) {
+  .grid-3, .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: var(--space-6); }
+}
+@media (max-width: 640px) {
+  .nav-login { display: none; }
+    .container, .container-narrow { padding: 0 var(--space-5); }
+  .section { padding: var(--space-9) 0; }
+  .section-sm { padding: var(--space-8) 0; }
+  .nav-links { display: none; }
+  .nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px; height: 40px;
+    border-radius: var(--radius);
+    background: var(--rule-soft);
+  }
+  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; gap: var(--space-3); align-items: flex-start; }
+  h1 { font-size: 40px; }
+}
+
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.nav-login {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 16px;
+  background: transparent;
+  color: var(--crimson);
+  border-radius: var(--radius);
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.18s var(--ease);
+  box-shadow: inset 0 0 0 1px var(--crimson);
+}
+.nav-login:hover {
+  background: var(--crimson);
+  color: var(--white);
+}
+.nav-login svg { transition: transform 0.18s var(--ease); }
+.nav-login:hover svg { transform: translateX(1px); }
+</style>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2032%2032%22%3E%0A%20%20%3Crect%20width%3D%2232%22%20height%3D%2232%22%20fill%3D%22%239F1239%22%20rx%3D%224%22/%3E%0A%20%20%3Ctext%20x%3D%2216%22%20y%3D%2223%22%20font-family%3D%22Inter%2C%20Arial%2C%20sans-serif%22%20font-size%3D%2222%22%20font-weight%3D%22700%22%20fill%3D%22%23FFFFFF%22%20text-anchor%3D%22middle%22%20letter-spacing%3D%22-1%22%3EC%3C/text%3E%0A%3C/svg%3E%0A">
+</head>
+<body><!-- NAV -->
+<header class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="wordmark">Comp<span class="iq">ifi</span></a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="product.html">Product</a></li>
+        <li><a href="pricing.html" class="active">Pricing</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions">
+      <a href="compifi-dashboard.html" class="nav-login" aria-label="Client login">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path><polyline points="10 17 15 12 10 7"></polyline><line x1="15" y1="12" x2="3" y2="12"></line></svg>
+        Client Login
+      </a>
+      <a href="contact.html" class="nav-cta">Book a walkthrough <span class="arrow">→</span></a>
+    </div>
+    <button class="nav-toggle" aria-label="Menu">
+      <svg width="18" height="14" viewBox="0 0 18 14" fill="none"><path d="M1 1h16M1 7h16M1 13h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- Toggle-specific styling (scoped here so we don't touch the master stylesheet) -->
+<style>
+  .price-toggle {
+    display: inline-flex;
+    align-items: center;
+    background: var(--white);
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    padding: 4px;
+    position: relative;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+  }
+  .price-toggle button {
+    padding: 10px 22px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink-3);
+    border-radius: 999px;
+    transition: all 0.2s var(--ease);
+    font-family: var(--mono);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .price-toggle button.is-active {
+    background: var(--ink);
+    color: var(--white);
+  }
+  .price-toggle .savings-badge {
+    color: var(--crimson);
+    font-weight: 700;
+    font-size: 11px;
+  }
+  .price-toggle button.is-active .savings-badge { color: #C73558; }
+
+  /* Tier cards */
+  .tier-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-5);
+    margin-top: var(--space-7);
+  }
+  .tier {
+    padding: var(--space-7) var(--space-6);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius-lg);
+    background: var(--white);
+    display: flex;
+    flex-direction: column;
+  }
+  .tier-flagship {
+    background: var(--ink);
+    color: var(--paper);
+    border-color: var(--ink);
+    position: relative;
+    transform: translateY(-8px);
+  }
+  .tier-flagship .tier-name { color: #C73558; }
+  .tier-flagship h2 { color: var(--white); }
+  .tier-flagship .tier-desc { color: rgba(255,255,255,0.7); }
+  .tier-flagship .price { color: var(--white); }
+  .tier-flagship .price-suffix,
+  .tier-flagship .billing-note { color: rgba(255,255,255,0.55); }
+  .tier-flagship hr { border-color: rgba(255,255,255,0.12); }
+  .tier-flagship .features-header { color: rgba(255,255,255,0.5); }
+  .tier-flagship .features li { color: rgba(255,255,255,0.85); }
+  .tier-flagship .features li .check { color: #C73558; }
+  .tier-flagship .features li strong { color: var(--white); }
+  .most-popular-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--crimson);
+    color: var(--white);
+    font-family: var(--mono);
+    font-size: 10px;
+    padding: 6px 14px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    border-radius: 999px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .tier-num {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-4);
+    margin-bottom: var(--space-3);
+  }
+  .tier-flagship .tier-num { color: rgba(255,255,255,0.55); }
+  .tier-name {
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1;
+    color: var(--ink);
+  }
+  .tier-desc {
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--ink-4);
+    margin-top: var(--space-3);
+    min-height: 44px;
+  }
+  .price-wrap {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin-top: var(--space-6);
+  }
+  .price {
+    font-size: 52px;
+    font-weight: 700;
+    letter-spacing: -0.035em;
+    line-height: 1;
+    color: var(--ink);
+    font-variant-numeric: tabular-nums;
+  }
+  .price-suffix {
+    font-size: 14px;
+    color: var(--ink-4);
+  }
+  .billing-note {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-4);
+    margin-top: 8px;
+  }
+  .tier-cta {
+    margin-top: var(--space-6);
+    width: 100%;
+    justify-content: center;
+  }
+  .tier hr {
+    border: 0;
+    border-top: 1px solid var(--rule);
+    margin: var(--space-6) 0 var(--space-5);
+  }
+  .features-header {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-4);
+    margin-bottom: var(--space-4);
+  }
+  .features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .features li {
+    display: grid;
+    grid-template-columns: 18px 1fr;
+    gap: 10px;
+    font-size: 14px;
+    color: var(--ink-2);
+    line-height: 1.45;
+  }
+  .features li .check {
+    color: var(--crimson);
+    font-weight: 700;
+  }
+  .features li strong { color: var(--ink); font-weight: 600; }
+
+  @media (max-width: 900px) {
+    .tier-grid { grid-template-columns: 1fr; }
+    .tier-flagship { transform: none; }
+  }
+</style>
+
+<!-- HERO -->
+<section class="section" style="padding-bottom: var(--space-6);">
+  <div class="container">
+    <div style="max-width: 880px;">
+      <div class="eyebrow">Pricing</div>
+      <h1 style="margin-top: var(--space-5);">
+        Three tiers.<br>
+        <span style="color: var(--crimson);">Public numbers.</span>
+      </h1>
+      <p class="lede" style="margin-top: var(--space-6); max-width: 640px;">
+        We don't hide pricing behind a sales conversation. You should be able to see the math before you talk to us. If our pricing isn't right for you, we'd rather you find out in 30 seconds than 3 calls.
+      </p>
+    </div>
+
+    <!-- Toggle (defaults to Annual) -->
+    <div style="margin-top: var(--space-6); display: flex; justify-content: center;">
+      <div class="price-toggle" role="tablist" aria-label="Billing frequency">
+        <button id="toggle-monthly" role="tab" aria-selected="false" type="button">Monthly</button>
+        <button id="toggle-annual" role="tab" aria-selected="true" type="button" class="is-active">
+          Annual
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIERS -->
+<section style="padding: var(--space-5) 0 var(--space-9);">
+  <div class="container">
+    <div class="tier-grid" style="margin-top: 0;">
+
+      <!-- CORE -->
+      <div class="tier">
+        <div class="tier-num">Tier 01</div>
+        <div class="tier-name">Core</div>
+        <p class="tier-desc">Compensation visibility for HR teams just getting started.</p>
+
+        <div class="price-wrap">
+          <span class="price"
+                data-monthly="$999"
+                data-annual="$849">$849</span>
+          <span class="price-suffix">/ month</span>
+        </div>
+        <div class="billing-note"
+             data-monthly="Billed monthly"
+             data-annual="Billed annually · $10,188 / yr">Billed annually · $10,188 / yr</div>
+
+        <a href="contact.html" class="btn btn-outline tier-cta">Start with Core <span class="arrow">→</span></a>
+
+        <hr>
+        <div class="features-header">What's included</div>
+        <ul class="features">
+          <li><span class="check">✓</span><span>Up to <strong>250 employees</strong></span></li>
+          <li><span class="check">✓</span><span><strong>Salary.com CAMD</strong> market data, refreshed quarterly</span></li>
+          <li><span class="check">✓</span><span>Pay positioning + role explorer modules</span></li>
+          <li><span class="check">✓</span><span>HRIS integration (<strong>BambooHR or Rippling</strong>)</span></li>
+          <li><span class="check">✓</span><span><strong>1-hour</strong> senior advisory consultation per quarter</span></li>
+          <li><span class="check">✓</span><span>Email support, 24-hour response</span></li>
+        </ul>
+      </div>
+
+      <!-- INTELLIGENCE (flagship) -->
+      <div class="tier tier-flagship">
+        <div class="most-popular-badge">Most popular</div>
+        <div class="tier-num">Tier 02</div>
+        <div class="tier-name">Intelligence</div>
+        <p class="tier-desc">For HR teams running comp like a strategic discipline.</p>
+
+        <div class="price-wrap">
+          <span class="price"
+                data-monthly="$1,899"
+                data-annual="$1,699">$1,699</span>
+          <span class="price-suffix">/ month</span>
+        </div>
+        <div class="billing-note"
+             data-monthly="Billed monthly"
+             data-annual="Billed annually · $20,388 / yr">Billed annually · $20,388 / yr</div>
+
+        <a href="contact.html" class="btn tier-cta" style="background: var(--white); color: var(--ink);">Choose Intelligence <span class="arrow">→</span></a>
+
+        <hr>
+        <div class="features-header">Everything in Core, plus</div>
+        <ul class="features">
+          <li><span class="check">✓</span><span>Up to <strong>750 employees</strong></span></li>
+          <li><span class="check">✓</span><span>Market data refreshed <strong>monthly</strong></span></li>
+          <li><span class="check">✓</span><span><strong>All six modules</strong> — pay equity, flight risk, geographic analysis</span></li>
+          <li><span class="check">✓</span><span>All HRIS integrations including <strong>ADP, Paylocity</strong></span></li>
+          <li><span class="check">✓</span><span><strong>Quarterly written report</strong> from your senior advisor</span></li>
+          <li><span class="check">✓</span><span>Direct advisor access via <strong>email & Slack</strong></span></li>
+          <li><span class="check">✓</span><span>Priority support, 4-hour response</span></li>
+        </ul>
+      </div>
+
+      <!-- ENTERPRISE -->
+      <div class="tier">
+        <div class="tier-num">Tier 03</div>
+        <div class="tier-name">Enterprise</div>
+        <p class="tier-desc">For growing companies with comp committees and board oversight.</p>
+
+        <div class="price-wrap">
+          <span class="price"
+                data-monthly="$2,799"
+                data-annual="$2,499">$2,499</span>
+          <span class="price-suffix">/ month</span>
+        </div>
+        <div class="billing-note"
+             data-monthly="Billed monthly"
+             data-annual="Billed annually · $29,988 / yr">Billed annually · $29,988 / yr</div>
+
+        <a href="contact.html" class="btn btn-dark tier-cta">Talk to us <span class="arrow">→</span></a>
+
+        <hr>
+        <div class="features-header">Everything in Intelligence, plus</div>
+        <ul class="features">
+          <li><span class="check">✓</span><span>Up to <strong>1,500 employees</strong></span></li>
+          <li><span class="check">✓</span><span>Custom job code mapping & <strong>industry overlays</strong></span></li>
+          <li><span class="check">✓</span><span><strong>Board-ready</strong> presentation templates</span></li>
+          <li><span class="check">✓</span><span>Dedicated <strong>senior advisor</strong> assigned to your account</span></li>
+          <li><span class="check">✓</span><span>Monthly executive briefing call</span></li>
+          <li><span class="check">✓</span><span><strong>Annual on-site</strong> compensation review</span></li>
+          <li><span class="check">✓</span><span><strong>SSO, SCIM,</strong> and audit logs</span></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Setup note -->
+    <div style="margin-top: var(--space-7); padding: var(--space-5); background: var(--paper-2); border-radius: var(--radius); display: flex; gap: var(--space-4); align-items: center; flex-wrap: wrap;">
+      <div style="font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--crimson);">Getting started</div>
+      <div style="font-size: 14px; color: var(--ink-3);">
+        <strong style="color: var(--ink);">Onboarding is included with any annual commitment.</strong> Covers data setup, role mapping to the Salary.com job library, and your kickoff with the advisory team. For monthly plans, a $2,500 onboarding fee applies — most customers choose annual and skip it.
+      </div>
+    </div>
+
+    <p class="caption" style="margin-top: var(--space-4); text-align: center;">
+      Need more than 1,500 employees, multi-entity structures, or custom integrations? <a href="contact.html" style="color: var(--crimson); font-weight: 600;">Talk to us</a> — we'll build something that fits.
+    </p>
+  </div>
+</section>
+
+<!-- COMPARISON TO ALTERNATIVES -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="eyebrow eyebrow-ink">The honest math</div>
+    <h2 style="margin-top: var(--space-4); max-width: 720px;">What you'd pay elsewhere.</h2>
+    <p class="body-lg" style="margin-top: var(--space-4); max-width: 640px;">
+      A fair comparison is part of helping you make the right decision. Here's how Compifi Intelligence stacks against the realistic alternatives.
+    </p>
+
+    <div style="margin-top: var(--space-7); border: 1px solid var(--rule); border-radius: var(--radius-lg); overflow: hidden; background: var(--white);">
+      <div style="display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 0; padding: var(--space-4) var(--space-5); background: var(--paper-2); border-bottom: 1px solid var(--rule); font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-4);">
+        <div></div>
+        <div>Annual cost</div>
+        <div>Advisor?</div>
+        <div>Real data?</div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 0; padding: var(--space-5); border-bottom: 1px solid var(--rule); align-items: center;">
+        <div>
+          <div style="font-weight: 600; font-size: 16px;">Big-firm consulting engagement</div>
+          <div class="body-sm" style="margin-top: 2px;">Bespoke compensation study from a name-brand consultancy</div>
+        </div>
+        <div style="font-size: 16px; font-weight: 600;">$150K+</div>
+        <div style="font-size: 14px; color: var(--ink-3);">Yes (senior)</div>
+        <div style="font-size: 14px; color: var(--ink-3);">Yes</div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 0; padding: var(--space-5); border-bottom: 1px solid var(--rule); align-items: center;">
+        <div>
+          <div style="font-weight: 600; font-size: 16px;">Tech-forward comp software</div>
+          <div class="body-sm" style="margin-top: 2px;">Self-serve platform, no advisor included</div>
+        </div>
+        <div style="font-size: 16px; font-weight: 600;">$30K–$60K</div>
+        <div style="font-size: 14px; color: var(--ink-4);">No</div>
+        <div style="font-size: 14px; color: var(--ink-3);">Crowdsourced</div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 0; padding: var(--space-5); border-bottom: 1px solid var(--rule); align-items: center;">
+        <div>
+          <div style="font-weight: 600; font-size: 16px;">Legacy comp software</div>
+          <div class="body-sm" style="margin-top: 2px;">Long-established mid-market platform</div>
+        </div>
+        <div style="font-size: 16px; font-weight: 600;">$15K–$40K</div>
+        <div style="font-size: 14px; color: var(--ink-4);">No</div>
+        <div style="font-size: 14px; color: var(--ink-3);">Mixed</div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 0; padding: var(--space-5); align-items: center; background: var(--crimson-soft);">
+        <div>
+          <div style="font-weight: 700; font-size: 16px; color: var(--crimson);">Compifi · Intelligence</div>
+          <div class="body-sm" style="margin-top: 2px; color: var(--ink-3);">All modules + senior advisor</div>
+        </div>
+        <div style="font-size: 16px; font-weight: 700; color: var(--crimson);">$20,388</div>
+        <div style="font-size: 14px; color: var(--ink-2);"><strong>Yes (senior)</strong></div>
+        <div style="font-size: 14px; color: var(--ink-2);"><strong>Salary.com</strong></div>
+      </div>
+    </div>
+
+    <p class="body-sm" style="margin-top: var(--space-4); font-style: italic;">
+      Numbers represent typical mid-market engagements. Compifi Intelligence shown at annual billing. We're happy to walk through a side-by-side comparison if you're evaluating a specific alternative.
+    </p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section">
+  <div class="container-narrow">
+    <div class="eyebrow">Common questions</div>
+    <h2 style="margin-top: var(--space-4);">A few things worth knowing.</h2>
+
+    <div style="margin-top: var(--space-7); display: flex; flex-direction: column; gap: 0;">
+      <details style="padding: var(--space-5) 0; border-bottom: 1px solid var(--rule);">
+        <summary style="cursor: pointer; font-size: 18px; font-weight: 600; color: var(--ink); list-style: none; display: flex; justify-content: space-between; align-items: center;">
+          <span>What if my company has more than 1,500 employees?</span>
+          <span style="font-family: var(--mono); color: var(--crimson); font-size: 20px; font-weight: 400;">+</span>
+        </summary>
+        <p class="body" style="margin-top: var(--space-4);">
+          Above 1,500 employees the consulting workload genuinely shifts — more entities, more pay structures, more board reporting. We'll build a custom Enterprise+ engagement that reflects that scale. Talk to us; we'll give you a real number, not a "request a quote" page.
+        </p>
+      </details>
+
+      <details style="padding: var(--space-5) 0; border-bottom: 1px solid var(--rule);">
+        <summary style="cursor: pointer; font-size: 18px; font-weight: 600; color: var(--ink); list-style: none; display: flex; justify-content: space-between; align-items: center;">
+          <span>Who's the senior advisor?</span>
+          <span style="font-family: var(--mono); color: var(--crimson); font-size: 20px; font-weight: 400;">+</span>
+        </summary>
+        <p class="body" style="margin-top: var(--space-4);">
+          Compifi's senior advisory team — 20+ years inside compensation, drawn from a vetted network of senior compensation practitioners. Every engagement is led by a senior advisor; you'll never be passed to a junior analyst.
+        </p>
+      </details>
+
+      <details style="padding: var(--space-5) 0; border-bottom: 1px solid var(--rule);">
+        <summary style="cursor: pointer; font-size: 18px; font-weight: 600; color: var(--ink); list-style: none; display: flex; justify-content: space-between; align-items: center;">
+          <span>How does the Salary.com partnership work?</span>
+          <span style="font-family: var(--mono); color: var(--crimson); font-size: 20px; font-weight: 400;">+</span>
+        </summary>
+        <p class="body" style="margin-top: var(--space-4);">
+          Compifi has a partnership with Salary.com that brings enterprise-grade market data directly into the platform. You don't license Salary.com separately — it's included in every tier. Core refreshes quarterly; Intelligence and Enterprise refresh monthly.
+        </p>
+      </details>
+
+      <details style="padding: var(--space-5) 0; border-bottom: 1px solid var(--rule);">
+        <summary style="cursor: pointer; font-size: 18px; font-weight: 600; color: var(--ink); list-style: none; display: flex; justify-content: space-between; align-items: center;">
+          <span>What does onboarding actually look like?</span>
+          <span style="font-family: var(--mono); color: var(--crimson); font-size: 20px; font-weight: 400;">+</span>
+        </summary>
+        <p class="body" style="margin-top: var(--space-4);">
+          We ask for an employee roster (one spreadsheet, common fields). We map your roles to the Salary.com job library, validate the data against your benchmarks, and schedule a kickoff with your senior advisor. Most engagements go live in two to three weeks.
+        </p>
+      </details>
+
+      <details style="padding: var(--space-5) 0; border-bottom: 1px solid var(--rule);">
+        <summary style="cursor: pointer; font-size: 18px; font-weight: 600; color: var(--ink); list-style: none; display: flex; justify-content: space-between; align-items: center;">
+          <span>Monthly or annual — which should I pick?</span>
+          <span style="font-family: var(--mono); color: var(--crimson); font-size: 20px; font-weight: 400;">+</span>
+        </summary>
+        <p class="body" style="margin-top: var(--space-4);">
+          Monthly if you want to test the thesis quickly with no long-term commitment. Annual if you're confident — you get a meaningful discount on every tier, and onboarding is included rather than billed separately. Most customers start monthly and convert to annual within their first two quarters.
+        </p>
+      </details>
+
+      <details style="padding: var(--space-5) 0; border-bottom: 1px solid var(--rule);">
+        <summary style="cursor: pointer; font-size: 18px; font-weight: 600; color: var(--ink); list-style: none; display: flex; justify-content: space-between; align-items: center;">
+          <span>Can I cancel?</span>
+          <span style="font-family: var(--mono); color: var(--crimson); font-size: 20px; font-weight: 400;">+</span>
+        </summary>
+        <p class="body" style="margin-top: var(--space-4);">
+          Monthly plans cancel any time. Annual plans cancel at the end of the term — we'll never auto-renew without confirming with you first.
+        </p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section section-dark">
+  <div class="container-narrow" style="text-align: center;">
+    <div class="eyebrow" style="color: #C73558;">Ready when you are</div>
+    <h2 style="margin-top: var(--space-4); color: var(--white);">Talk to a real human before you spend a dollar.</h2>
+    <p class="lede" style="margin-top: var(--space-5); color: rgba(255,255,255,0.72); max-width: 540px; margin-left: auto; margin-right: auto;">
+      A 30-minute walkthrough on your data. If we're not a fit, we'll tell you — and recommend who is.
+    </p>
+    <div style="margin-top: var(--space-6);">
+      <a href="contact.html" class="btn btn-primary btn-lg">Book a walkthrough <span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="wordmark wordmark-lg" style="color: var(--white);">Comp<span class="iq" style="color: #C73558;">ifi</span></a>
+        <p class="footer-tagline">
+          Compensation intelligence for the middle. Senior advisory delivered through our consulting partner.
+        </p>
+      </div>
+      <div>
+        <h5>Product</h5>
+        <ul>
+          <li><a href="product.html">Modules</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="contact.html">Book a walkthrough</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Get in touch</h5>
+        <ul>
+          <li><a href="mailto:hello@compifi.ai">hello@compifi.ai</a></li>
+          <li><a href="contact.html">Schedule a call</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 Compifi, Inc.</div>
+      <div>Partnered with Salary.com</div>
+    </div>
+  </div>
+</footer>
+
+<!-- Toggle behavior -->
+<script>
+(function () {
+  const monthlyBtn = document.getElementById('toggle-monthly');
+  const annualBtn  = document.getElementById('toggle-annual');
+  if (!monthlyBtn || !annualBtn) return;
+
+  function setMode(mode) {
+    const isAnnual = mode === 'annual';
+    annualBtn.classList.toggle('is-active', isAnnual);
+    monthlyBtn.classList.toggle('is-active', !isAnnual);
+    annualBtn.setAttribute('aria-selected', isAnnual);
+    monthlyBtn.setAttribute('aria-selected', !isAnnual);
+
+    document.querySelectorAll('[data-monthly][data-annual]').forEach(el => {
+      el.textContent = el.dataset[isAnnual ? 'annual' : 'monthly'];
+    });
+  }
+
+  monthlyBtn.addEventListener('click', () => setMode('monthly'));
+  annualBtn.addEventListener('click',  () => setMode('annual'));
+
+  // Default to annual on load
+  setMode('annual');
+})();
+
+// Mobile nav toggle (carried over from master JS)
+(function () {
+  const toggle = document.querySelector('.nav-toggle');
+  const links  = document.querySelector('.nav-links');
+  if (toggle && links) {
+    toggle.addEventListener('click', () => {
+      const isOpen = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', isOpen);
+      links.style.display = isOpen ? 'flex' : '';
+      if (isOpen) {
+        Object.assign(links.style, {
+          position: 'absolute', top: '64px', left: '0', right: '0',
+          flexDirection: 'column', background: 'var(--paper)',
+          padding: 'var(--space-5) var(--space-6)',
+          borderBottom: '1px solid var(--rule)', gap: 'var(--space-4)'
+        });
+      }
+    });
+  }
+})();
+</script>
+</body>
+</html>
