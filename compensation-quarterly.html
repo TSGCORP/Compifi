@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Compensation Quarterly, Issue 01 — Compifi</title>
+<meta name="description" content="Pay compression is the most expensive comp problem most mid-market companies can't see. Get Issue 01 of The Compensation Quarterly — free.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2032%2032%22%3E%0A%20%20%3Crect%20width%3D%2232%22%20height%3D%2232%22%20fill%3D%22%239F1239%22%20rx%3D%224%22/%3E%0A%20%20%3Ctext%20x%3D%2216%22%20y%3D%2223%22%20font-family%3D%22Inter%2C%20Arial%2C%20sans-serif%22%20font-size%3D%2222%22%20font-weight%3D%22700%22%20fill%3D%22%23FFFFFF%22%20text-anchor%3D%22middle%22%20letter-spacing%3D%22-1%22%3Ec%3C/text%3E%0A%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --crimson:#9F1239; --crimson-dark:#7E1F2D; --crimson-soft:#FBEAEE;
+    --ink:#0A0A0A; --ink-3:#4A4A4A; --ink-4:#6B6B6B;
+    --rule:#E2DCCF; --paper:#FBF7F0; --paper-2:#F5F0E6; --white:#FFFFFF;
+    --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;
+    --serif:'Fraunces',Georgia,serif;
+    --mono:'JetBrains Mono',ui-monospace,Consolas,monospace;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:var(--sans); background:var(--paper); color:var(--ink); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a { color:inherit; }
+
+  /* nav */
+  .nav { display:flex; align-items:center; justify-content:space-between; padding:22px 40px; border-bottom:1px solid var(--rule); }
+  .wm { font-size:22px; font-weight:500; letter-spacing:-0.025em; color:var(--ink); text-decoration:none; }
+  .wm .ifi { font-weight:700; color:var(--crimson); letter-spacing:-0.03em; }
+  .nav-links { display:flex; gap:28px; font-size:14px; color:var(--ink-3); }
+  .nav-links a { text-decoration:none; }
+  .nav-cta { font-size:14px; font-weight:600; color:var(--crimson); border-bottom:1.5px solid var(--crimson); padding-bottom:2px; text-decoration:none; }
+
+  /* hero / split */
+  .wrap { max-width:1080px; margin:0 auto; padding:0 40px; }
+  .split { display:grid; grid-template-columns:1.05fr 0.95fr; gap:64px; padding:72px 0 64px; align-items:start; }
+  @media (max-width:880px){ .split{ grid-template-columns:1fr; gap:40px; padding:48px 0; } .nav-links{ display:none; } }
+
+  .issue-line { font-family:var(--mono); font-size:11px; font-weight:500; letter-spacing:0.18em; text-transform:uppercase; color:#8A7B62; display:flex; align-items:center; gap:14px; }
+  .issue-line::after { content:''; height:1px; width:54px; background:#D9CDB6; }
+  h1 { font-family:var(--serif); font-weight:500; font-size:42px; line-height:1.08; letter-spacing:-0.015em; color:#181310; margin-top:20px; }
+  h1 em { font-style:italic; color:var(--crimson); }
+  .dek { font-size:17px; line-height:1.62; color:var(--ink-3); margin-top:22px; max-width:480px; }
+
+  .whats-inside { margin-top:34px; }
+  .wi-title { font-family:var(--mono); font-size:11px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:#8A7B62; margin-bottom:16px; }
+  .wi-list { list-style:none; }
+  .wi-list li { font-size:15px; color:#2E2820; line-height:1.5; padding:11px 0 11px 28px; border-bottom:1px solid #EBE3D3; position:relative; }
+  .wi-list li:last-child { border-bottom:0; }
+  .wi-list li::before { content:''; position:absolute; left:0; top:17px; width:7px; height:7px; border-radius:50%; background:var(--crimson); }
+  .wi-list li strong { font-weight:600; color:#181310; }
+
+  .stat-inline { display:flex; gap:28px; margin-top:30px; padding-top:24px; border-top:1px solid var(--rule); }
+  .si { flex:1; }
+  .si .n { font-family:var(--serif); font-weight:500; font-size:28px; color:var(--crimson); line-height:1; }
+  .si .l { font-size:12px; color:var(--ink-4); line-height:1.4; margin-top:7px; }
+
+  /* form card */
+  .form-card { background:var(--white); border:1px solid var(--rule); border-radius:10px; padding:36px 34px; box-shadow:0 14px 40px rgba(24,19,16,0.07); position:sticky; top:32px; }
+  .fc-cover { background:var(--paper); border:1px solid var(--rule); border-radius:6px; padding:20px 22px; margin-bottom:26px; }
+  .fc-cover .pub { font-family:var(--serif); font-style:italic; font-size:14px; color:var(--crimson); }
+  .fc-cover .rule { height:2px; width:40px; background:var(--crimson); margin:10px 0 12px; }
+  .fc-cover .ct { font-family:var(--serif); font-weight:500; font-size:18px; line-height:1.2; color:#181310; }
+  .fc-cover .meta { font-family:var(--mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#8A7B62; margin-top:12px; }
+
+  .fc-head { font-family:var(--serif); font-weight:500; font-size:20px; color:#181310; margin-bottom:6px; }
+  .fc-sub { font-size:13.5px; color:var(--ink-4); margin-bottom:22px; line-height:1.5; }
+
+  /* ============================================================
+     HUBSPOT FORM EMBED SLOT
+     Replace the contents of #hubspot-form-slot (everything between
+     the comment markers) with your HubSpot form embed code.
+     The placeholder below is styled to match — it is NOT a working
+     form; it's a visual stand-in until the embed is pasted.
+     ============================================================ */
+  #hubspot-form-slot label { display:block; font-size:13px; font-weight:600; color:#2E2820; margin:0 0 6px; }
+  #hubspot-form-slot input, #hubspot-form-slot select {
+    width:100%; padding:11px 13px; font-family:var(--sans); font-size:14px; color:var(--ink);
+    border:1px solid #D9CFC0; border-radius:6px; background:#FCFAF6; margin-bottom:16px; outline:none;
+  }
+  #hubspot-form-slot input:focus, #hubspot-form-slot select:focus { border-color:var(--crimson); }
+  .hs-submit { width:100%; background:var(--crimson); color:#fff; font-family:var(--sans); font-size:15px; font-weight:600; border:none; border-radius:6px; padding:14px; cursor:pointer; letter-spacing:0.01em; }
+  .hs-submit:hover { background:var(--crimson-dark); }
+  .placeholder-note { font-family:var(--mono); font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:#B08; color:#9F1239; background:var(--crimson-soft); border:1px dashed var(--crimson); border-radius:5px; padding:8px 10px; margin-bottom:18px; text-align:center; }
+
+  .fc-fine { font-size:11px; color:var(--ink-4); line-height:1.5; margin-top:16px; text-align:center; }
+
+  /* footer */
+  .foot { border-top:1px solid var(--rule); margin-top:40px; }
+  .foot-in { max-width:1080px; margin:0 auto; padding:28px 40px; display:flex; justify-content:space-between; align-items:center; }
+  .foot .wm { font-size:18px; }
+  .foot .legal { font-size:12px; color:var(--ink-4); }
+</style>
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="/" class="wm">comp<span class="ifi">ifi</span></a>
+    <div class="nav-links">
+      <a href="/product.html">Product</a>
+      <a href="/pricing.html">Pricing</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+    <a href="/contact.html" class="nav-cta">Book a walkthrough</a>
+  </nav>
+
+  <div class="wrap">
+    <div class="split">
+
+      <!-- LEFT: the pitch -->
+      <div>
+        <div class="issue-line">The Compensation Quarterly · Issue 01</div>
+        <h1>The quiet raise you're giving new hires — <em>and not your best people.</em></h1>
+        <p class="dek">Pay compression is the most expensive compensation problem most mid-market companies can't see. This issue shows why it's building right now, how to detect it before it costs you your tenured talent, and what to do about it this quarter.</p>
+
+        <div class="whats-inside">
+          <div class="wi-title">What's inside</div>
+          <ul class="wi-list">
+            <li>Why, for the first time since 2010, <strong>staying now pays better than switching</strong> — and why that's a trap, not good news</li>
+            <li>The one number — <strong>compa-ratio</strong> — that exposes compression, and how to compute it</li>
+            <li>A worked example: a real-shaped engineering team where the <strong>4-year veteran earns $22K less</strong> than last year's hire</li>
+            <li>A four-step playbook to find and fix compression <strong>before someone resigns over it</strong></li>
+          </ul>
+        </div>
+
+        <div class="stat-inline">
+          <div class="si"><div class="n">4.1%</div><div class="l">Stayer wage growth — now above switchers, first time since 2010</div></div>
+          <div class="si"><div class="n">50–200%</div><div class="l">Of salary: cost to replace one departing employee</div></div>
+          <div class="si"><div class="n">38%</div><div class="l">Who leave cite inadequate pay as the reason</div></div>
+        </div>
+      </div>
+
+      <!-- RIGHT: the gate -->
+      <div class="form-card">
+        <div class="fc-cover">
+          <div class="pub">The Compensation Quarterly</div>
+          <div class="rule"></div>
+          <div class="ct">The quiet raise you're giving new hires</div>
+          <div class="meta">Issue 01 · Q2 2026 · 5 pages</div>
+        </div>
+
+        <div class="fc-head">Get the issue — free</div>
+        <div class="fc-sub">Enter your details and we'll email you the PDF right away.</div>
+
+        <!-- ===== HUBSPOT FORM EMBED SLOT ===== -->
+        <div id="hubspot-form-slot">
+          <script src="https://js-na2.hsforms.net/forms/embed/246498112.js" defer></script>
+          <div class="hs-form-frame" data-region="na2" data-form-id="e4f83d08-14eb-4957-9174-d8a5a084f98e" data-portal-id="246498112"></div>
+        </div>
+        <!-- ===== END HUBSPOT FORM EMBED SLOT ===== -->
+
+        <div class="fc-fine">No spam. We'll send the report and, occasionally, future issues. Unsubscribe anytime.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="foot">
+    <div class="foot-in">
+      <a href="/" class="wm">comp<span class="ifi">ifi</span></a>
+      <span class="legal">© 2026 Compifi, Inc. · compifi.ai</span>
+    </div>
+  </footer>
+
+</body>
+</html>
