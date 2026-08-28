@@ -604,6 +604,6 @@
   const scObs=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.querySelectorAll('.sc').forEach(b=>{b.style.width=getComputedStyle(b).getPropertyValue('--w');});scObs.unobserve(e.target);}})},{threshold:0.4});
   document.querySelectorAll('.show-visual').forEach(v=>scObs.observe(v));
 </script>
-
+<script src="https://chat.socialintents.com/api/chat/socialintents.1.5.js#2c9fa899a02ba52e01a047339a0e3229" async="async"></script>
 </body>
 </html>
