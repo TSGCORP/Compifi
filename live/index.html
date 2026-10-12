@@ -372,6 +372,19 @@
 .lc-k { font-family:var(--mono); font-size:9.5px; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-4); }
 .lc-v { color:var(--ink-2); font-weight:500; }
 
+.l-chips-lab { font-family:var(--mono); font-size:9.5px; letter-spacing:0.14em; text-transform:uppercase;
+  color:rgba(255,255,255,0.50); width:100%; margin-bottom:4px; }
+.chip { cursor:pointer; background:transparent; font-family:var(--mono); font-size:10px;
+  letter-spacing:0.07em; color:rgba(255,255,255,0.72); border:1px solid rgba(255,255,255,0.24);
+  border-radius:100px; padding:6px 12px; transition:all .15s; }
+.chip:hover { border-color:rgba(255,255,255,0.55); color:#fff; }
+.chip.on { background:var(--red); border-color:var(--red); color:#fff; font-weight:600; }
+.lc-take { margin-top:16px; padding-top:14px; border-top:1px solid var(--rule); }
+.lc-take span { font-family:var(--mono); font-size:9px; letter-spacing:0.13em; text-transform:uppercase;
+  color:var(--ink-4); display:block; margin-bottom:5px; }
+.lc-take em { font-style:normal; font-size:13.5px; color:var(--ink-2); font-weight:500; }
+.lc-btn { width:100%; justify-content:center; margin-top:18px; }
+.lc-soon { pointer-events:none; opacity:.45; }
 .l-head { max-width:660px; }
 .l-head h2 { margin-top:14px; }
 .l-head .body-lg { margin-top:16px; }
@@ -458,27 +471,39 @@
         <span class="eyebrow reveal in">A Compifi live series · Season One</span>
         <h1 class="reveal in d1">The Comp Desk <em>Live.</em></h1>
         <div class="l-when reveal in d2">Every Wednesday · 12 PM ET · Oct 21 – Dec 16</div>
-        <p class="body-lg reveal in d2">Twenty-five minutes on the compensation calls the middle market actually faces. One idea, one chart, and the judgment to act on it. Register once and get every Wednesday, with the recording after each.</p>
+        <p class="body-lg reveal in d2">Twenty-five minutes on the compensation calls the middle market actually faces. One idea, one chart, and the judgment to act on it. Register for the episodes you need — each one stands on its own.</p>
         <div class="l-cta reveal in d3">
-          <a href="ZOOM_LIVE_REGISTRATION_LINK" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Register for the season <span class="arrow">→</span></a>
-          <span class="l-cta-note">One registration covers all eight — or pick single episodes below. Free.</span>
+          <a href="#season" class="btn btn-primary btn-lg">See all eight episodes <span class="arrow">↓</span></a>
+          <span class="l-cta-note">Free. Register for the ones you need.</span>
         </div>
-        <div class="l-chips reveal in d4"><span class="chip">Oct 21</span><span class="chip">Oct 28</span><span class="chip">Nov 4</span><span class="chip">Nov 11</span><span class="chip">Nov 18</span><span class="chip">Dec 2</span><span class="chip">Dec 9</span><span class="chip">Dec 16</span></div>
+        <div class="l-chips reveal in d4">
+          <span class="l-chips-lab">Pick an episode</span>
+          <button type="button" class="chip on" data-ep="01">Oct 21</button>
+          <button type="button" class="chip" data-ep="02">Oct 28</button>
+          <button type="button" class="chip" data-ep="03">Nov 4</button>
+          <button type="button" class="chip" data-ep="04">Nov 11</button>
+          <button type="button" class="chip" data-ep="05">Nov 18</button>
+          <button type="button" class="chip" data-ep="06">Dec 2</button>
+          <button type="button" class="chip" data-ep="07">Dec 9</button>
+          <button type="button" class="chip" data-ep="08">Dec 16</button>
+        </div>
       </div>
 
-      <div class="l-card reveal in d2">
+      <div class="l-card reveal in d2" id="epCard">
         <div class="lc-top">
-          <span class="lc-tag">Episode 01</span>
+          <span class="lc-tag" id="lcTag">Episode 01</span>
           <span class="lc-live">Registration open</span>
         </div>
-        <div class="lc-date">Oct 21</div>
-        <div class="lc-time">Wednesday · 12 PM ET · 25 min</div>
-        <div class="lc-title">Defending Your Merit Budget</div>
-        <p class="lc-hook">How to answer the CFO's merit question before it's asked — the one-page case that holds up in the budget meeting.</p>
+        <div class="lc-date" id="lcDate">Oct 21</div>
+        <div class="lc-time" id="lcTime">Wednesday · 12 PM ET · 25 min</div>
+        <div class="lc-title" id="lcTitle">Defending Your Merit Budget</div>
+        <p class="lc-hook" id="lcHook">How to answer the CFO's merit question before it's asked — the one-page case that holds up in the budget meeting.</p>
+        <div class="lc-take"><span>You'll leave with</span><em id="lcTake">A one-page merit-defense you can reuse</em></div>
+        <a href="#" id="lcReg" target="_blank" rel="noopener" class="btn btn-primary lc-btn">Register for this episode <span class="arrow">→</span></a>
         <div class="lc-foot">
           <div class="lc-item"><span class="lc-k">Format</span><span class="lc-v">25 min + live Q&amp;A</span></div>
           <div class="lc-item"><span class="lc-k">Cost</span><span class="lc-v">Free</span></div>
-          <div class="lc-item"><span class="lc-k">Recording</span><span class="lc-v">To all registrants</span></div>
+          <div class="lc-item"><span class="lc-k">Recording</span><span class="lc-v">Sent after the episode</span></div>
         </div>
       </div>
     </div>
@@ -540,12 +565,12 @@
 </section>
 
 <!-- SEASON -->
-<section class="section">
+<section class="section" id="season">
   <div class="container">
     <div class="l-head reveal" style="margin-bottom:34px;">
       <span class="eyebrow">Season one</span>
       <h2>Eight episodes, October through <em>December.</em></h2>
-      <p class="body-lg">Every Wednesday at noon Eastern, skipping Thanksgiving week. Register for the whole season, or just the episodes you need.</p>
+      <p class="body-lg">Every Wednesday at noon Eastern, skipping Thanksgiving week. Each episode registers separately, so take the ones that matter to you.</p>
     </div>
       <div class="ep ep-next reveal">
         <div class="ep-meta">
@@ -557,7 +582,7 @@
           <h3>Defending Your Merit Budget</h3>
           <p>How to answer the CFO's merit question before it's asked — the one-page case that holds up in the budget meeting.</p>
           <div class="ep-take"><span>Takeaway</span>A one-page merit-defense you can reuse</div>
-          <a href="REG_EP01" target="_blank" rel="noopener" class="ep-reg">Register for this episode <span class="arrow">→</span></a>
+          <a href="https://compifi-ai.zoom.us/webinar/register/WN_gxfPo9hRSvOXI4sCl_nkYQ" target="_blank" rel="noopener" class="ep-reg">Register for this episode <span class="arrow">→</span></a>
         </div>
       </div>
       <div class="ep reveal">
@@ -570,7 +595,7 @@
           <h3>Comp Conversations, Fixed Before They Break</h3>
           <p>The four things a well-run comp conversation actually says — and the one that quietly causes attrition when it's missing.</p>
           <div class="ep-take"><span>Takeaway</span>A manager talk-track for the hard asks</div>
-          <a href="REG_EP02" target="_blank" rel="noopener" class="ep-reg">Register for this episode <span class="arrow">→</span></a>
+          <a href="https://compifi-ai.zoom.us/webinar/register/WN_mVzZ49mfRYeZ8VZd_it4Aw" target="_blank" rel="noopener" class="ep-reg">Register for this episode <span class="arrow">→</span></a>
         </div>
       </div>
       <div class="ep reveal">
@@ -583,7 +608,7 @@
           <h3>The AI-Skill Shift and Your 2027 Budget</h3>
           <p>What to adjust before December locks the plan — where skill premiums are moving and who you're about to underpay.</p>
           <div class="ep-take"><span>Takeaway</span>A skill-premium checklist for 2027</div>
-          <a href="REG_EP03" target="_blank" rel="noopener" class="ep-reg">Register for this episode <span class="arrow">→</span></a>
+          <a href="https://compifi-ai.zoom.us/webinar/register/WN_k99AvcJQSWmNxFhFQHXeHA" target="_blank" rel="noopener" class="ep-reg">Register for this episode <span class="arrow">→</span></a>
         </div>
       </div>
       <div class="ep reveal">
@@ -596,7 +621,7 @@
           <h3>Pay Positioning for the Middle</h3>
           <p>Reading your true market position without a six-figure engagement — what &ldquo;at market&rdquo; really means when you look closely.</p>
           <div class="ep-take"><span>Takeaway</span>A positioning read on one real role</div>
-          <a href="REG_EP04" target="_blank" rel="noopener" class="ep-reg">Register for this episode <span class="arrow">→</span></a>
+          <a href="https://compifi-ai.zoom.us/webinar/register/WN_NKDShAgiQKeO-pBYR0kzvw" target="_blank" rel="noopener" class="ep-reg">Register for this episode <span class="arrow">→</span></a>
         </div>
       </div>
       <div class="ep reveal">
@@ -609,7 +634,7 @@
           <h3>Three People Your Flight Risk Isn't Seeing</h3>
           <p>The signals most retention analyses miss — the quietly unwatched, not the obviously unhappy.</p>
           <div class="ep-take"><span>Takeaway</span>A flight-risk scan you can run Monday</div>
-          <a href="REG_EP05" target="_blank" rel="noopener" class="ep-reg">Register for this episode <span class="arrow">→</span></a>
+          <a href="https://compifi-ai.zoom.us/webinar/register/WN_cIQTgD6qTBGk1K6q7VH7rw" target="_blank" rel="noopener" class="ep-reg">Register for this episode <span class="arrow">→</span></a>
         </div>
       </div>
       <div class="ep reveal">
@@ -622,7 +647,7 @@
           <h3>Pay Transparency: Three Compliance Questions</h3>
           <p>The questions your legal team will ask you in January — and how to have the answers before they do.</p>
           <div class="ep-take"><span>Takeaway</span>A transparency-readiness check</div>
-          <a href="REG_EP06" target="_blank" rel="noopener" class="ep-reg">Register for this episode <span class="arrow">→</span></a>
+          <a href="https://compifi-ai.zoom.us/webinar/register/WN_l4W3Ys4IQ02UUYDwX6WcEw" target="_blank" rel="noopener" class="ep-reg">Register for this episode <span class="arrow">→</span></a>
         </div>
       </div>
       <div class="ep reveal">
@@ -635,7 +660,7 @@
           <h3>Paying Remote Right</h3>
           <p>Geographic pay without the guesswork — how to set and defend location differentials you can actually explain.</p>
           <div class="ep-take"><span>Takeaway</span>A geo-pay framework for mixed teams</div>
-          <a href="REG_EP07" target="_blank" rel="noopener" class="ep-reg">Register for this episode <span class="arrow">→</span></a>
+          <a href="https://compifi-ai.zoom.us/webinar/register/WN_Omxj1jlxQNuPMbJQK5BQ2A" target="_blank" rel="noopener" class="ep-reg">Register for this episode <span class="arrow">→</span></a>
         </div>
       </div>
       <div class="ep reveal">
@@ -648,7 +673,7 @@
           <h3>Pay Equity Without the Six-Figure Engagement</h3>
           <p>Finding and fixing the gaps before someone else does — a working approach that doesn't need an outside study.</p>
           <div class="ep-take"><span>Takeaway</span>A quick equity self-audit</div>
-          <a href="REG_EP08" target="_blank" rel="noopener" class="ep-reg">Register for this episode <span class="arrow">→</span></a>
+          <a href="https://compifi-ai.zoom.us/webinar/register/WN_aKukhmmsSgyxcM6tLAi_eg" target="_blank" rel="noopener" class="ep-reg">Register for this episode <span class="arrow">→</span></a>
         </div>
       </div>
     <div class="l-skip reveal">No episode Nov 25 — Thanksgiving week.</div>
@@ -662,9 +687,9 @@
       <div>
         <span class="eyebrow">Can't make it live</span>
         <h2>Register anyway.</h2>
-        <p>Every registrant gets the recording after each episode, whether you attended or not. Register once and the whole season lands in your inbox as it happens — including episodes that have already aired.</p>
+        <p>Register for an episode and you get the recording afterward whether you made it live or not. Sign up for as many as you like — there is no commitment to the rest of the season.</p>
       </div>
-      <a href="ZOOM_LIVE_REGISTRATION_LINK" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Register for the season <span class="arrow">→</span></a>
+      <a href="#season" class="btn btn-primary btn-lg">Browse the episodes <span class="arrow">↓</span></a>
     </div>
   </div>
 </section>
@@ -689,10 +714,10 @@
   <div class="container">
     <div class="cta-band reveal">
       <span class="eyebrow">Season one</span>
-      <h2>Eight Wednesdays. One registration.<br><em>Nothing to unsubscribe from.</em></h2>
-      <p>Register once and every episode lands on your calendar, with the recording after each.</p>
+      <h2>Eight Wednesdays. <em>Take what you need.</em></h2>
+      <p>Each episode registers on its own. No season pass, no sequence to escape, recording sent after every one you join.</p>
       <div class="row">
-        <a href="ZOOM_LIVE_REGISTRATION_LINK" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Register for the season <span class="arrow">→</span></a>
+        <a href="#season" class="btn btn-primary btn-lg">Browse the episodes <span class="arrow">↓</span></a>
         <a href="../product.html" class="link-light">Or see what Compifi does</a>
       </div>
     </div>
@@ -720,5 +745,44 @@
 </script>
 
 
+
+<script>
+(function () {
+  var EPS = {"01": {"date": "Oct 21", "day": "Wednesday", "title": "Defending Your Merit Budget", "hook": "How to answer the CFO's merit question before it's asked \u2014 the one-page case that holds up in the budget meeting.", "take": "A one-page merit-defense you can reuse", "reg": "https://compifi-ai.zoom.us/webinar/register/WN_gxfPo9hRSvOXI4sCl_nkYQ"}, "02": {"date": "Oct 28", "day": "Wednesday", "title": "Comp Conversations, Fixed Before They Break", "hook": "The four things a well-run comp conversation actually says \u2014 and the one that quietly causes attrition when it's missing.", "take": "A manager talk-track for the hard asks", "reg": "https://compifi-ai.zoom.us/webinar/register/WN_mVzZ49mfRYeZ8VZd_it4Aw"}, "03": {"date": "Nov 4", "day": "Wednesday", "title": "The AI-Skill Shift and Your 2027 Budget", "hook": "What to adjust before December locks the plan \u2014 where skill premiums are moving and who you're about to underpay.", "take": "A skill-premium checklist for 2027", "reg": "https://compifi-ai.zoom.us/webinar/register/WN_k99AvcJQSWmNxFhFQHXeHA"}, "04": {"date": "Nov 11", "day": "Wednesday", "title": "Pay Positioning for the Middle", "hook": "Reading your true market position without a six-figure engagement \u2014 what \u201cat market\u201d really means when you look closely.", "take": "A positioning read on one real role", "reg": "https://compifi-ai.zoom.us/webinar/register/WN_NKDShAgiQKeO-pBYR0kzvw"}, "05": {"date": "Nov 18", "day": "Wednesday", "title": "Three People Your Flight Risk Isn't Seeing", "hook": "The signals most retention analyses miss \u2014 the quietly unwatched, not the obviously unhappy.", "take": "A flight-risk scan you can run Monday", "reg": "https://compifi-ai.zoom.us/webinar/register/WN_cIQTgD6qTBGk1K6q7VH7rw"}, "06": {"date": "Dec 2", "day": "Wednesday", "title": "Pay Transparency: Three Compliance Questions", "hook": "The questions your legal team will ask you in January \u2014 and how to have the answers before they do.", "take": "A transparency-readiness check", "reg": "https://compifi-ai.zoom.us/webinar/register/WN_l4W3Ys4IQ02UUYDwX6WcEw"}, "07": {"date": "Dec 9", "day": "Wednesday", "title": "Paying Remote Right", "hook": "Geographic pay without the guesswork \u2014 how to set and defend location differentials you can actually explain.", "take": "A geo-pay framework for mixed teams", "reg": "https://compifi-ai.zoom.us/webinar/register/WN_Omxj1jlxQNuPMbJQK5BQ2A"}, "08": {"date": "Dec 16", "day": "Wednesday", "title": "Pay Equity Without the Six-Figure Engagement", "hook": "Finding and fixing the gaps before someone else does \u2014 a working approach that doesn't need an outside study.", "take": "A quick equity self-audit", "reg": "https://compifi-ai.zoom.us/webinar/register/WN_aKukhmmsSgyxcM6tLAi_eg"}};
+  var card = document.getElementById('epCard');
+  if (!card) return;
+  var set = function (id, v) { var el = document.getElementById(id); if (el) el.textContent = v; };
+
+  function show(n) {
+    var e = EPS[n]; if (!e) return;
+    set('lcTag', 'Episode ' + n);
+    set('lcDate', e.date);
+    set('lcTime', e.day + ' \u00b7 12 PM ET \u00b7 25 min');
+    set('lcTitle', e.title);
+    set('lcHook', e.hook);
+    set('lcTake', e.take);
+
+    var btn = document.getElementById('lcReg');
+    var live = e.reg.indexOf('http') === 0;
+    btn.href = live ? e.reg : '#';
+    btn.className = 'btn btn-primary lc-btn' + (live ? '' : ' lc-soon');
+    btn.innerHTML = live
+      ? 'Register for this episode <span class="arrow">\u2192</span>'
+      : 'Registration opens soon';
+
+    var chips = document.querySelectorAll('.chip[data-ep]');
+    for (var i = 0; i < chips.length; i++) {
+      chips[i].classList.toggle('on', chips[i].getAttribute('data-ep') === n);
+    }
+  }
+
+  document.addEventListener('click', function (ev) {
+    var c = ev.target.closest ? ev.target.closest('.chip[data-ep]') : null;
+    if (c) { ev.preventDefault(); show(c.getAttribute('data-ep')); }
+  });
+
+  show('01');
+})();
+</script>
 </body>
 </html>
