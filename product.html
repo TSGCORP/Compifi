@@ -4,6 +4,23 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Product — Compifi</title>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Product — Compifi",
+  "description": "Six modules that answer every meaningful compensation question a mid-market HR leader has — overview, benchmarking, role explorer, flight risk, pay equity, and quarterly insights.",
+  "url": "https://compifi.ai/product.html",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Compifi",
+    "url": "https://compifi.ai/"
+  },
+  "publisher": {
+    "@id": "https://compifi.ai/#organization"
+  }
+}
+</script>
 <!-- OpenAI ChatGPT Ads measurement pixel — see pixel.js -->
 <script src="pixel.js"></script>
 <meta name="description" content="Six modules that answer every meaningful compensation question a mid-market HR leader has — overview, benchmarking, role explorer, flight risk, pay equity, and quarterly insights.">
@@ -180,7 +197,7 @@
   .foot-grid { display:grid; grid-template-columns:1.6fr 1fr 1fr 1fr; gap:40px; }
   .foot-brand .desc { margin-top:14px; max-width:290px; font-size:13.5px; color:var(--ink-2); }
   .foot-tag { font-family:var(--mono); font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase; color:var(--red); margin-top:14px; }
-  .foot-col h4 { font-family:var(--mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--ink-4); margin-bottom:14px; }
+  .foot-col h3 { font-family:var(--mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--ink-4); margin-bottom:14px; }
   .foot-col a { display:block; font-size:14px; color:var(--ink-2); margin-bottom:9px; }
   .foot-col a:hover{ color:var(--red); }
   .foot-addr { font-style:normal; font-size:13.5px; line-height:1.5; color:var(--ink-3); margin-top:16px; }
@@ -211,7 +228,7 @@
 .mrow { display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center; }
 .mrow.flip .mvis { order:-1; }
 .mrow .mtag { font-family:var(--mono); font-size:11px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--red); }
-.mrow h3 { font-family:var(--serif); font-weight:500; font-size:30px; letter-spacing:-0.012em; line-height:1.12; margin:12px 0 14px; }
+.mrow h2, .mrow h3 { font-family:var(--serif); font-weight:500; font-size:30px; letter-spacing:-0.012em; line-height:1.12; margin:12px 0 14px; }
 .mrow p { font-size:16px; line-height:1.62; }
 .mrow .feat { margin-top:18px; display:flex; flex-direction:column; gap:10px; }
 .mrow .feat div { font-size:14.5px; color:var(--ink-2); padding-left:22px; position:relative; }
@@ -255,7 +272,7 @@
 /* pricing FAQ */
 .faq { max-width:760px; margin:0 auto; }
 .faq-item { border-bottom:1px solid var(--rule); padding:22px 0; }
-.faq-item h4 { font-size:16px; font-weight:600; margin-bottom:8px; }
+.faq-item h3 { font-size:16px; font-weight:600; margin-bottom:8px; }
 .faq-item p { font-size:14.5px; color:var(--ink-3); line-height:1.6; }
 
 /* about */
@@ -265,7 +282,7 @@
 .values { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:48px; }
 .value { background:var(--white); border:1px solid var(--rule); border-radius:var(--radius-lg); padding:26px; }
 .value .vn { font-family:var(--mono); font-size:12px; font-weight:700; color:var(--red); margin-bottom:12px; }
-.value h3 { margin-bottom:8px; } .value p { font-size:14px; line-height:1.55; }
+.value h3, .value h2 { margin-bottom:8px; font-size:19px; font-family:var(--sans); font-weight:600; letter-spacing:0; line-height:1.35; } .value p { font-size:14px; line-height:1.55; }
 
 /* contact */
 .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:start; }
@@ -418,7 +435,7 @@
       <div class="mrow">
         <div class="reveal">
           <div class="mtag">01 · Overview</div>
-          <h3>The whole compensation picture, on one screen.</h3>
+          <h2>The whole compensation picture, on one screen.</h2>
           <p>Where your organization stands against the market right now — average compa-ratio, how many people sit below the floor, what it would cost to fix, and which divisions are driving it. The read you want before a comp committee meeting.</p>
           <div class="feat"><div>Company-wide compa-ratio and distribution</div><div>Headcount below the 0.85 floor, costed</div><div>Division-level breakdown, sorted by exposure</div></div>
         </div>
@@ -445,7 +462,7 @@
       <div class="mrow flip">
         <div class="reveal">
           <div class="mtag">02 · Benchmarking</div>
-          <h3>Price any role against the market in seconds.</h3>
+          <h2>Price any role against the market in seconds.</h2>
           <p>Type a title, pick a location and level, and get the full percentile spread — P10 through P90, base and total cash. Then see how your own people in that role compare, so the number is defensible internally as well as externally.</p>
           <div class="feat"><div>P10–P90 base and total cash compensation</div><div>Metro-level cuts, not national averages</div><div>Your internal comparables alongside the market</div></div>
         </div>
@@ -467,7 +484,7 @@
       <div class="mrow">
         <div class="reveal">
           <div class="mtag">03 · Role Explorer</div>
-          <h3>Search any person or role and get the full picture.</h3>
+          <h2>Search any person or role and get the full picture.</h2>
           <p>Every employee, every role, filterable by division, state, and compa band. Open anyone and see their position, their range, their tenure, and their manager — without exporting anything to a spreadsheet.</p>
           <div class="feat"><div>Filter by division, state, and compa band</div><div>Sortable on any column, down to the individual</div><div>Full detail view without leaving the page</div></div>
         </div>
@@ -488,7 +505,7 @@
       <div class="mrow flip">
         <div class="reveal">
           <div class="mtag">04 · Flight Risk</div>
-          <h3>See who's most likely to leave — and what it costs.</h3>
+          <h2>See who's most likely to leave — and what it costs.</h2>
           <p>Compensation gap crossed with tenure, scored per employee and ranked. The people at the top of this list are the ones the market has already noticed. Each carries a retention cost, so the conversation stops being abstract.</p>
           <div class="feat"><div>Composite risk score per employee</div><div>Retention cost against replacement cost</div><div>Ranked list you can act on this quarter</div></div>
         </div>
@@ -508,7 +525,7 @@
       <div class="mrow">
         <div class="reveal">
           <div class="mtag">05 · Pay Equity</div>
-          <h3>Surface gaps before they become liabilities.</h3>
+          <h2>Surface gaps before they become liabilities.</h2>
           <p>Compare pay across divisions, tenure bands, and job families to find patterns that shouldn't be there. The tenure view is the one most companies have never run — and it is routinely where the uncomfortable answer lives.</p>
           <div class="feat"><div>Division, tenure, and job-family cuts</div><div>Cost to close every gap, quantified</div><div>Defensible methodology you can show a board</div></div>
         </div>
@@ -529,7 +546,7 @@
       <div class="mrow flip">
         <div class="reveal">
           <div class="mtag">06 · Insights</div>
-          <h3>A written read on your data — not just another chart.</h3>
+          <h2>A written read on your data — not just another chart.</h2>
           <p>Each quarter a senior advisor reviews your numbers and writes up what matters: what changed, what to do about it before merit cycle, and what to watch. Signed by a person, not generated by a template.</p>
           <div class="feat"><div>Quarterly written analysis from your advisor</div><div>Prioritized actions, costed and sequenced</div><div>Board-ready language you can forward as-is</div></div>
         </div>
@@ -585,9 +602,9 @@
         <div class="door">
           <div class="door-k">Not yet</div>
           <h3>Watch the analysis first</h3>
-          <p>The Q4 working sessions cover the same views the platform produces — merit prep, flight risk, pay transparency.</p>
-          <a href="https://compifi-ai.zoom.us/webinar/register/WN_Bs1No6MTToqCZfwxrzLLBg" target="_blank" rel="noopener" class="btn-quiet">Join the working sessions <span class="arrow">→</span></a>
-          <div class="door-n">Free. Every other Wednesday.</div>
+          <p>The Comp Desk Live covers the same views the platform produces — merit prep, flight risk, pay transparency. Twenty-five minutes, every Wednesday.</p>
+          <a href="live/" class="btn-quiet">Join The Comp Desk Live <span class="arrow">→</span></a>
+          <div class="door-n">Free. Every Wednesday at noon ET.</div>
         </div>
       </div>
     </div>
@@ -602,9 +619,9 @@
         <p class="desc">The compensation platform that runs your pay strategy — with senior advisors when judgment matters.</p>
         <div class="foot-tag">Compensation intelligence. Simplified.</div>
       </div>
-      <div class="foot-col"><h4>Product</h4><a href="product.html">Modules</a><a href="pricing.html">Pricing</a><a href="https://scheduler.zoom.us/compifi/compifi-demo" target="_blank" rel="noopener">Book a walkthrough</a></div>
-      <div class="foot-col"><h4>Company</h4><a href="about.html">About</a><a href="contact.html">Contact</a></div>
-      <div class="foot-col"><h4>Get in touch</h4><a href="mailto:hello@compifi.ai">hello@compifi.ai</a><a href="tel:+14804394400">480-439-4400</a><a href="https://scheduler.zoom.us/compifi/compifi-demo" target="_blank" rel="noopener">Schedule a call</a><address class="foot-addr">9375 E. Shea Blvd, Suite 100<br>Scottsdale, AZ 85260</address></div>
+      <div class="foot-col"><h3>Product</h3><a href="product.html">Modules</a><a href="pricing.html">Pricing</a><a href="https://scheduler.zoom.us/compifi/compifi-demo" target="_blank" rel="noopener">Book a walkthrough</a></div>
+      <div class="foot-col"><h3>Company</h3><a href="about.html">About</a><a href="contact.html">Contact</a></div>
+      <div class="foot-col"><h3>Get in touch</h3><a href="mailto:hello@compifi.ai">hello@compifi.ai</a><a href="tel:+14804394400">480-439-4400</a><a href="https://scheduler.zoom.us/compifi/compifi-demo" target="_blank" rel="noopener">Schedule a call</a><address class="foot-addr">9375 E. Shea Blvd, Suite 100<br>Scottsdale, AZ 85260</address></div>
     </div>
     <div class="foot-base"><span>© 2026 Compifi LLC. All rights reserved.</span><span class="foot-mark">Compifi® is a registered trademark of Compifi LLC.</span><span><a href="privacy.html" style="color:var(--ink-4);">Privacy</a></span><span>compifi.ai</span></div>
   </div>

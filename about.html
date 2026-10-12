@@ -4,6 +4,23 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>About — Compifi</title>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "About — Compifi",
+  "description": "Compifi was built to close the gap between what enterprise compensation teams do and what mid-market HR leaders can do alone — combining enterprise-grade data with senior advisory.",
+  "url": "https://compifi.ai/about.html",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Compifi",
+    "url": "https://compifi.ai/"
+  },
+  "publisher": {
+    "@id": "https://compifi.ai/#organization"
+  }
+}
+</script>
 <!-- OpenAI ChatGPT Ads measurement pixel — see pixel.js -->
 <script src="pixel.js"></script>
 <meta name="description" content="Compifi was built to close the gap between what enterprise compensation teams do and what mid-market HR leaders can do alone — combining enterprise-grade data with senior advisory.">
@@ -180,7 +197,7 @@
   .foot-grid { display:grid; grid-template-columns:1.6fr 1fr 1fr 1fr; gap:40px; }
   .foot-brand .desc { margin-top:14px; max-width:290px; font-size:13.5px; color:var(--ink-2); }
   .foot-tag { font-family:var(--mono); font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase; color:var(--red); margin-top:14px; }
-  .foot-col h4 { font-family:var(--mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--ink-4); margin-bottom:14px; }
+  .foot-col h3 { font-family:var(--mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--ink-4); margin-bottom:14px; }
   .foot-col a { display:block; font-size:14px; color:var(--ink-2); margin-bottom:9px; }
   .foot-col a:hover{ color:var(--red); }
   .foot-addr { font-style:normal; font-size:13.5px; line-height:1.5; color:var(--ink-3); margin-top:16px; }
@@ -211,7 +228,7 @@
 .mrow { display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center; }
 .mrow.flip .mvis { order:-1; }
 .mrow .mtag { font-family:var(--mono); font-size:11px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--red); }
-.mrow h3 { font-family:var(--serif); font-weight:500; font-size:30px; letter-spacing:-0.012em; line-height:1.12; margin:12px 0 14px; }
+.mrow h2, .mrow h3 { font-family:var(--serif); font-weight:500; font-size:30px; letter-spacing:-0.012em; line-height:1.12; margin:12px 0 14px; }
 .mrow p { font-size:16px; line-height:1.62; }
 .mrow .feat { margin-top:18px; display:flex; flex-direction:column; gap:10px; }
 .mrow .feat div { font-size:14.5px; color:var(--ink-2); padding-left:22px; position:relative; }
@@ -255,7 +272,7 @@
 /* pricing FAQ */
 .faq { max-width:760px; margin:0 auto; }
 .faq-item { border-bottom:1px solid var(--rule); padding:22px 0; }
-.faq-item h4 { font-size:16px; font-weight:600; margin-bottom:8px; }
+.faq-item h3 { font-size:16px; font-weight:600; margin-bottom:8px; }
 .faq-item p { font-size:14.5px; color:var(--ink-3); line-height:1.6; }
 
 /* about */
@@ -265,7 +282,7 @@
 .values { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:48px; }
 .value { background:var(--white); border:1px solid var(--rule); border-radius:var(--radius-lg); padding:26px; }
 .value .vn { font-family:var(--mono); font-size:12px; font-weight:700; color:var(--red); margin-bottom:12px; }
-.value h3 { margin-bottom:8px; } .value p { font-size:14px; line-height:1.55; }
+.value h3, .value h2 { margin-bottom:8px; font-size:19px; font-family:var(--sans); font-weight:600; letter-spacing:0; line-height:1.35; } .value p { font-size:14px; line-height:1.55; }
 
 /* contact */
 .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:start; }
@@ -348,9 +365,9 @@
     </div>
 
     <div class="values">
-      <div class="value reveal"><div class="vn">01</div><h3>Software does the work</h3><p>The platform handles the heavy lifting — benchmarking, positioning, equity, flight risk — continuously, so nothing depends on someone remembering to run a report.</p></div>
-      <div class="value reveal d1"><div class="vn">02</div><h3>People provide the judgment</h3><p>A senior compensation advisor reads your numbers and tells you what they mean. Not a junior analyst, not a chatbot — a professional who's done this for decades.</p></div>
-      <div class="value reveal d2"><div class="vn">03</div><h3>Priced for the middle</h3><p>Everything is built and priced for mid-market companies — visible pricing, no enterprise-only gatekeeping, real value at every tier.</p></div>
+      <div class="value reveal"><div class="vn">01</div><h2>Software does the work</h2><p>The platform handles the heavy lifting — benchmarking, positioning, equity, flight risk — continuously, so nothing depends on someone remembering to run a report.</p></div>
+      <div class="value reveal d1"><div class="vn">02</div><h2>People provide the judgment</h2><p>A senior compensation advisor reads your numbers and tells you what they mean. Not a junior analyst, not a chatbot — a professional who's done this for decades.</p></div>
+      <div class="value reveal d2"><div class="vn">03</div><h2>Priced for the middle</h2><p>Everything is built and priced for mid-market companies — visible pricing, no enterprise-only gatekeeping, real value at every tier.</p></div>
     </div>
   </div>
 </section>
@@ -378,15 +395,15 @@
     <div class="cta-band two reveal">
       <div class="cta-lead">
         <h2>The fastest way to judge us is to<br><em>watch us work.</em></h2>
-        <p>Everything above is a claim. The working sessions are the evidence — forty-five minutes of actual compensation work, free, no pitch at the end.</p>
+        <p>Everything above is a claim. The Comp Desk Live is the evidence — twenty-five minutes of actual compensation work, every Wednesday, free, no pitch at the end.</p>
       </div>
       <div class="doors">
         <div class="door door-lead">
           <div class="door-k">Not yet</div>
           <h3>Watch us work, free</h3>
-          <p>Six Q4 sessions on merit cycle, CFO defense, manager conversations, and year-end retention. Practitioner to practitioner.</p>
-          <a href="https://compifi-ai.zoom.us/webinar/register/WN_Bs1No6MTToqCZfwxrzLLBg" target="_blank" rel="noopener" class="btn btn-primary">Join the working sessions <span class="arrow">→</span></a>
-          <div class="door-n">Free. One registration, all six.</div>
+          <p>The Comp Desk Live — eight Wednesday episodes on merit cycle, CFO defense, pay transparency, and year-end retention. Practitioner to practitioner.</p>
+          <a href="live/" class="btn btn-primary">Join The Comp Desk Live <span class="arrow">→</span></a>
+          <div class="door-n">Free. One registration, all eight.</div>
         </div>
         <div class="door">
           <div class="door-k">Ready now</div>
@@ -408,9 +425,9 @@
         <p class="desc">The compensation platform that runs your pay strategy — with senior advisors when judgment matters.</p>
         <div class="foot-tag">Compensation intelligence. Simplified.</div>
       </div>
-      <div class="foot-col"><h4>Product</h4><a href="product.html">Modules</a><a href="pricing.html">Pricing</a><a href="https://scheduler.zoom.us/compifi/compifi-demo" target="_blank" rel="noopener">Book a walkthrough</a></div>
-      <div class="foot-col"><h4>Company</h4><a href="about.html">About</a><a href="contact.html">Contact</a></div>
-      <div class="foot-col"><h4>Get in touch</h4><a href="mailto:hello@compifi.ai">hello@compifi.ai</a><a href="tel:+14804394400">480-439-4400</a><a href="https://scheduler.zoom.us/compifi/compifi-demo" target="_blank" rel="noopener">Schedule a call</a><address class="foot-addr">9375 E. Shea Blvd, Suite 100<br>Scottsdale, AZ 85260</address></div>
+      <div class="foot-col"><h3>Product</h3><a href="product.html">Modules</a><a href="pricing.html">Pricing</a><a href="https://scheduler.zoom.us/compifi/compifi-demo" target="_blank" rel="noopener">Book a walkthrough</a></div>
+      <div class="foot-col"><h3>Company</h3><a href="about.html">About</a><a href="contact.html">Contact</a></div>
+      <div class="foot-col"><h3>Get in touch</h3><a href="mailto:hello@compifi.ai">hello@compifi.ai</a><a href="tel:+14804394400">480-439-4400</a><a href="https://scheduler.zoom.us/compifi/compifi-demo" target="_blank" rel="noopener">Schedule a call</a><address class="foot-addr">9375 E. Shea Blvd, Suite 100<br>Scottsdale, AZ 85260</address></div>
     </div>
     <div class="foot-base"><span>© 2026 Compifi LLC. All rights reserved.</span><span class="foot-mark">Compifi® is a registered trademark of Compifi LLC.</span><span><a href="privacy.html" style="color:var(--ink-4);">Privacy</a></span><span>compifi.ai</span></div>
   </div>
