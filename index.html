@@ -135,7 +135,7 @@
   .link-red:hover{ color:var(--red); }
 
   .hero { position:relative; padding:64px 0 80px; }
-  .hero-grid { display:grid; grid-template-columns:0.95fr 1.05fr; gap:56px; align-items:center; }
+  .hero-grid { display:grid; grid-template-columns:0.95fr 1.05fr; gap:52px; align-items:start; }
   .hero .eyebrow{ display:inline-flex; align-items:center; gap:12px; }
   .hero .eyebrow::after{ content:''; height:1px; width:42px; background:var(--red-soft2); }
   .hero h1 { margin-top:20px; }
@@ -257,7 +257,7 @@
 
 
   /* ---- dark hero shell ---- */
-  .hero { background:var(--h-bg); padding:78px 0 88px; overflow:hidden; }
+  .hero { background:var(--h-bg); padding:56px 0 62px; overflow:hidden; }
   .hero::before { content:''; position:absolute; inset:0;
     background-image:linear-gradient(rgba(255,255,255,0.052) 1px, transparent 1px),
                      linear-gradient(90deg, rgba(255,255,255,0.052) 1px, transparent 1px);
@@ -472,8 +472,55 @@
 .hs-wrap .hs-form-booleancheckbox label { display:flex; gap:8px; align-items:flex-start;
   font-family:var(--sans); font-size:13px; text-transform:none; letter-spacing:0; color:var(--ink-3); }
 
+/* section headers (HubSpot rich-text blocks between fields) */
+.hs-wrap .hs-richtext h3, .hs-wrap .hs-richtext h4 {
+  font-family:var(--mono); font-size:9.5px; font-weight:600; letter-spacing:.14em;
+  text-transform:uppercase; color:var(--red); margin:24px 0 12px;
+  padding-top:18px; border-top:1px solid var(--rule); }
+.hs-wrap .hs-form-field:first-of-type ~ .hs-richtext:first-of-type h3 { margin-top:0; }
+.hs-wrap .hs-richtext:first-child h3, .hs-wrap .hs-richtext:first-child h4 {
+  margin-top:0; padding-top:0; border-top:none; }
+/* helper text under a field */
+.hs-wrap .hs-field-desc { font-size:11.5px; color:var(--ink-4); margin:5px 0 0; line-height:1.45; }
+.hs-wrap .hs-form-field > label + .hs-field-desc { margin:-2px 0 7px; }
+.hs-wrap ::placeholder { color:#A9ADA6; opacity:1; }
+.hs-wrap select { appearance:none; background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8'><path d='M1 1l5 5 5-5' stroke='%238A8A8A' stroke-width='1.6' fill='none' stroke-linecap='round'/></svg>");
+  background-repeat:no-repeat; background-position:right 13px center; padding-right:34px; }
+
+/* --- compact form card: the hero got tall once fields were added --- */
+.hs-wrap { padding:24px 26px 22px; }
+.hs-head { padding-bottom:15px; margin-bottom:16px; }
+.hs-h { font-size:21px; line-height:1.22; }
+.hs-sub { font-size:13px; margin-top:9px; }
+.hs-k { margin-bottom:9px; }
+.hs-fine { font-size:11px; margin-top:12px; padding-top:11px; }
+
+.hs-wrap .hs-form-field { margin-bottom:10px; }
+.hs-wrap .hs-form-field > label { font-size:9px; margin-bottom:4px; }
+.hs-wrap input[type=text], .hs-wrap input[type=email], .hs-wrap input[type=tel],
+.hs-wrap textarea, .hs-wrap select { font-size:13.5px; padding:9px 11px; border-radius:7px; }
+.hs-wrap textarea { min-height:62px; }
+.hs-wrap .hs-button { font-size:14.5px; padding:12px 22px; margin-top:4px; border-radius:8px; }
+.hs-wrap .hs-richtext h3, .hs-wrap .hs-richtext h4 { margin:14px 0 9px; padding-top:12px; }
+.hs-wrap .hs-field-desc { font-size:11px; }
+
+/* two-up the short fields so the card stops growing vertically */
+@media (min-width:941px){
+  .hs-wrap .hs-form-field.hs-firstname,
+  .hs-wrap .hs-form-field.hs-lastname { display:inline-block; width:calc(50% - 5px); vertical-align:top; }
+  .hs-wrap .hs-form-field.hs-firstname { margin-right:10px; }
+  .hs-wrap .hs-form-field.hs-company,
+  .hs-wrap .hs-form-field.hs-jobtitle { display:inline-block; width:calc(50% - 5px); vertical-align:top; }
+  .hs-wrap .hs-form-field.hs-company { margin-right:10px; }
+}
+
 @media (max-width:940px){ .hs-wrap { padding:24px 22px 22px; } .hs-h { font-size:22px; } }
 
+.hero-more { display:inline-flex; align-items:center; gap:7px; margin-top:18px;
+  font-family:var(--mono); font-size:10.5px; letter-spacing:.12em; text-transform:uppercase;
+  color:rgba(255,255,255,.55); transition:color .15s; }
+.hero-more:hover { color:#fff; }
+.hero-more span { font-size:13px; }
 .hero-proof { display:flex; gap:34px; margin:26px 0 24px; padding-top:22px; border-top:1px solid var(--rule); }
 .hp { display:flex; align-items:baseline; gap:9px; }
 .hp-n { font-family:var(--serif); font-weight:600; font-size:34px; line-height:1; color:var(--red); }
@@ -504,7 +551,7 @@
         <h1 class="reveal in d1">Know what your roles are <em>really worth.</em></h1>
         <p class="body-lg reveal in d2">Market pay data and plain-English guidance for HR teams without a dedicated comp analyst. Send three roles and get a written read on where they sit against market — no demo, no sales call first.</p>
         <div class="hero-proof reveal in d3">
-          <div class="hp"><span class="hp-n">2</span><span class="hp-l">business days<br>to your read</span></div>
+          <div class="hp"><span class="hp-n">1</span><span class="hp-l">business day<br>to your read</span></div>
           <div class="hp"><span class="hp-n">3</span><span class="hp-l">roles,<br>no charge</span></div>
           <div class="hp"><span class="hp-n">0</span><span class="hp-l">sales calls<br>required</span></div>
         </div>
@@ -512,13 +559,14 @@
           <a href="book/" class="link-red">Or book a walkthrough instead</a>
         </div>
         <div class="hero-foot reveal in d4">Published pricing · Built by Stuart Reeves, CCP, CECP, GPHR</div>
+        <a href="#what" class="hero-more reveal in d4">See how it works <span>↓</span></a>
       </div>
 
 <div class="hs-wrap">
           <div class="hs-head">
             <div class="hs-k">Free · no demo required</div>
             <h2 class="hs-h">Send three roles.<br>Get a pay read back.</h2>
-            <p class="hs-sub">Title and location for each. You'll have a written read on where they sit against market within two business days.</p>
+            <p class="hs-sub">Title and location for each. You'll have a written read on where they sit against market by the next business day.</p>
           </div>
           <div id="compifiFreeRead"></div>
           <div class="hs-fine">We use it to run your read and reply. Nothing else. <a href="privacy.html">Privacy</a>.</div>
@@ -527,7 +575,7 @@
   </div>
 </section>
 
-<div class="trust">
+<div class="trust" id="what">
   <div class="container">
     <span class="t-label">One platform</span>
     <span class="t-item"><span class="chk">✓</span> Compensation management</span>
@@ -780,7 +828,34 @@
 
 
 
-<script charset="utf-8" type="text/javascript" src="//js-na2.hsforms.net/forms/embed/v2.js"></script>
+<script charset="utf-8" type="text/javascript" src="https://js-na2.hsforms.net/forms/embed/v2.js"></script>
+<script>
+/* Render the free-read form. The guard below retries briefly, because the
+   HubSpot script can be slow or blocked; if it never arrives we show a
+   direct link rather than leaving an empty card. */
+(function () {
+  var slot = document.getElementById('compifiFreeRead');
+  if (!slot) return;
+  var tries = 0;
+
+  (function go() {
+    if (window.hbspt && window.hbspt.forms) {
+      window.hbspt.forms.create({
+        portalId: "246498112",
+        formId: "63c1abb4-2c92-4d77-b946-061783689c97",
+        region: "na2",
+        target: "#compifiFreeRead"
+      });
+      return;
+    }
+    if (++tries < 40) { setTimeout(go, 150); return; }   // ~6s
+    slot.innerHTML = '<p style="font-size:14.5px;color:var(--ink-3);line-height:1.6;margin:4px 0 2px;">'
+      + 'The form isn\'t loading — an ad blocker or privacy extension may be blocking it. '
+      + 'Email <a href="mailto:hello@compifi.ai" style="color:var(--red);font-weight:600;">hello@compifi.ai</a> '
+      + 'with three roles (title and location) and we\'ll send your read back.</p>';
+  })();
+})();
+</script>
 <script>
   if (window.hbspt && document.getElementById('compifiFreeRead')) {
     hbspt.forms.create({
